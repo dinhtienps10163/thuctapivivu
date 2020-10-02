@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-icon (click)="goback()" name="arrow-back-outline"></ion-icon>
+    <ion-title style="text-align: center">Chọn ga đi</ion-title>
+  </ion-item>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-contnet">
+  <div style="background-color: lightblue; width: 50%; border-radius: 5px;" (click)="next()" >
+    <ion-item color="lightblue">
+      <ion-icon name="search"></ion-icon>
+    <ion-label class="ion-label">Nhập tên thành phố hoặc ga</ion-label>
+  </ion-item>
+  </div>
+  <div style="background-color: lightblue; width: 30%; margin-left: 240px;margin-top: -49px; border-radius: 5px;">
+    <ion-item color="lightblue">
+    <label class="ion-label">Vị trí của bạn</label>
+    <ion-icon name="locate-outline"></ion-icon>
+    </ion-item>
+  </div>
+  <ion-label class="ion-label-search">Tìm kiếm phổ biến</ion-label>
+
+<div>
+  <ion-title>Ga Hà Nội</ion-title>
+  <ion-label>Hà Nội</ion-label>
+</div>
+<div>
+<ion-list>
+  <ion-radio-group>
+    <ion-list-header style="background-color: lightblue;">
+      <ion-label class="ion-label-header">
+        HỒ CHÍ MINH
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label class="ion-label-adrress">Ga Sài Gòn</ion-label>
+      <ion-radio value="Ga Sài Gòn"></ion-radio>
+    </ion-item>
+    <ion-list-header style="background-color: lightblue;">
+      <ion-label class="ion-label-header">
+        QUẢNG NGÃI
+      </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label class="ion-label-adrress">Ga Quảng Ngãi</ion-label>
+      <ion-radio value="Ga Quảng Ngãi"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="ion-label-adrress">Ga Đức Phổ</ion-label>
+      <ion-radio value="Ga Đức Phổ"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+</div>
+</ion-content>
