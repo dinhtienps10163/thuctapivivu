@@ -1,0 +1,51 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-item>
+      <ion-title class="title-header">Chọn số lượng khách hàng</ion-title>
+      <ion-icon (click)="dismiss()" name="close" slot="end"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div>
+    <ion-item
+      class="ion-items"
+      *ngFor="let khachHang of listDoiTuongKH"
+    >
+      <ion-item class="ion-item">
+        <ion-icon class="icon" name="people"></ion-icon>
+        <div>
+          <ion-title class="title">{{khachHang.tenPTOnline}}</ion-title>
+          <ion-title class="content">{{khachHang.nhom}}</ion-title>
+        </div>
+      </ion-item>
+      <ion-item slot="end" class="ion-item">
+        <ion-button [disabled]="isDisableleft" (click)="clickminus()"><ion-icon class="icon-add" name="remove-circle-outline" ></ion-icon></ion-button>
+        
+        <ion-title>{{amount}}</ion-title>
+        <ion-button [disabled]="isDisableright" (click)="clickplus()"> <ion-icon class="icon-remove" name="add-circle-outline"></ion-icon>
+        </ion-button>
+
+      </ion-item>
+    </ion-item>
+  </div>
+  <hr />
+  <ion-icon name=""> </ion-icon>
+  <div style="width: 90%; margin-left: 20px">
+    <ion-label style="font-size: 12px"
+      >Trẻ em 6 tuổi được miễn phí vé nếu ngồi cùng phụ huynh. (Mỗi phụ huynh
+      được ngồi cùng tối đa 2 trẻ, từ trẻ thứ 3 trở đi phải mua vé trẻ em bình
+      thường). Khuyến mãi cho sinh viên và người cao tuổi chỉ áp dụng cho Công
+      dân Việt Nam.</ion-label
+    >
+  </div>
+
+</ion-content>
+<ion-footer>
+
+  <ion-item>
+    <ion-button style="width: 50%; height: 40px; font-size: 16px;" color="medium" (click)="dismiss()">Hủy</ion-button>
+  <ion-button style="width: 50%; height: 40px; font-size: 16px;" (click)="clickitem()">Xác nhận</ion-button>
+</ion-item>
+</ion-footer>

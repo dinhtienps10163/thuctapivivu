@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { SearchGoPage } from './searchgo.page';
 
 import { SearchGoPageRoutingModule } from './searchgo-routing.module';
+import { service } from '../../../../service/service';
+import { UserProvider } from 'src/service/ultility';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { SearchGoPageRoutingModule } from './searchgo-routing.module';
     IonicModule,
     SearchGoPageRoutingModule
   ],
-  declarations: [SearchGoPage]
+  declarations: [SearchGoPage],
+  providers:[service, UserProvider],
+
 })
 export class SearchGoPageModule {}

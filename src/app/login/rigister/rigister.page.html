@@ -1,0 +1,47 @@
+
+  <div class="center">
+    <div style="margin-top: -20px">
+      <ion-card-title style="text-align: center">
+        <img style="height: 90px;" src="./assets/logo/logo.svg" />
+      </ion-card-title>
+      <div (click)="goback()" class="div-go-back">
+        <img style="margin-top: 6px;height: 36px;" src="./assets/imgs/ios-arrow-round-back-white.svg" >
+      </div>
+    </div>
+    <ion-grid>
+      <ion-row justify-content-around>
+        <ion-col col-sm-6 col-md-6 col-lg-4 col-xl-3 align-self-center>
+          <form >
+              <ion-item style="--padding-start: 0px">
+              <ion-label style="color:white" position="floating">Email/Số di động</ion-label>
+              <ion-input ></ion-input>
+            </ion-item>
+            <ion-item style="--padding-start: 0px">
+              <ion-label style="color:white"position="floating">Mật khẩu</ion-label>
+              <ion-input ></ion-input>
+            </ion-item>
+            <!-- <div style="text-align: right;color: #fff;font-size: 13px;margin-top: 10px;" (click)="resetpassword()">
+              Quên mật khẩu?
+            </div> -->
+            <ion-row style="margin-left: -5px">
+                <ion-col size="0.5">
+                    <ion-checkbox  ></ion-checkbox>
+                </ion-col>
+                <ion-col size="10.5">
+                    <ion-label  style="color: white;margin: 1px 10px 0px 5px" text-wrap>Bằng việc tham gia iVIVU, tôi đông ý tất cả các điều kiện & điều khoản</ion-label>
+                </ion-col>
+            </ion-row>
+            <div style="text-align:center">
+              <button style="text-transform: none;font-weight: 400;margin-top: 30px;background-color: transparent; border: solid 1px #fff;" shape="round" fill="outline"
+                 class="button text-button">Đăng
+                ký</button>
+            </div>
+          
+          </form>
+   
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+ 

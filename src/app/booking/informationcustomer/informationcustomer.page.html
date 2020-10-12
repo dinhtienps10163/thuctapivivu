@@ -1,0 +1,48 @@
+<ion-header class="background-center" translucent="true">
+  <ion-toolbar color="blue">
+    <ion-item class="ion-item" color="blue">
+      <ion-icon
+        (click)="goback()"
+        class="icon"
+        name="arrow-back-outline"
+      ></ion-icon>
+      <ion-title class="title-header">Thông tin hành khách</ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-content">
+  <ion-item style="--background: var(--ion-background-color, #ecf0f5)">
+    <ion-label style="font-size: 18px"> THÔNG TIN HÀNH KHÁCH</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-select> </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
+  </ion-item>
+  <ion-item style="--background: var(--ion-background-color, #ecf0f5)">
+    <ion-label style="font-size: 18px">THÔNG TIN NGƯỜI ĐẶT</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Họ tên"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Số điện thoại"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox></ion-checkbox>
+    <ion-title style="font-size: 14px">Xuất hóa đơn</ion-title>
+  </ion-item>
+</ion-content>
+<ion-footer style="--background: var(--ion-background-color, #ecf0f5)">
+  <ion-button style="width: 99%">Tiếp tục</ion-button>
+</ion-footer>

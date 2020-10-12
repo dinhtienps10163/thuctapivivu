@@ -3,16 +3,19 @@ export class list {
     listNhomCho: string
     listLoaiCho: string
     listDoiTuongKH: string
+    
 }
 export class listGaBacNam {
-    id: number
-    maGa: string
-    tenGa: string
-    sKeys: string
+     id: string;
+    maGa: string;
+    tenGa: string;
+     sKeys: string;
+
 }
 export class listNhomCho{
-    code: string
-    name: string
+     code: string
+     name: string
+  
 }
 export class listLoaiCho{
     nhomCho: string
@@ -24,4 +27,7 @@ export class listDoiTuongKH{
     maPT: number
     tyLe: number
     tenPTOnline: string
+}
+export class listday{
+    selectedTime: string
 }

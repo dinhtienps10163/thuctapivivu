@@ -1,96 +1,167 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title style="text-align: center">Trang chủ</ion-title>
+
+<ion-header class="background-center" translucent="true">
+  <ion-toolbar color="blue">
+    <img class="img-icon" src="../../assets/logo/logo.svg"/>
+    <ion-title class="title-header">Trang chủ</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-content">
+  <div class="center">
+    <div style="margin-left: 20px; width: 90%; --background: var(--ion-background-color, #0000);">
+    <div>
   <ion-label class="label">GA ĐI</ion-label>
-  <div class="item-address" (click)="searchgo()">
-    <ion-item color="lightblue">
-      <ion-title class="title-address">Sài Gòn - Hồ Chí Minh</ion-title>
+  <div class="item-address" (click)="_openModalSearchGo()">
+    <ion-item  class="ion-item">
+      <ion-input class="title-address">{{GaBacNamDi}}</ion-input>
       <ion-icon name="caret-down-outline"></ion-icon>
     </ion-item>
   </div>
-  <div style="margin-top: 10px">
+</div>
+  <div style="margin-top: 10px; ">
     <ion-label class="label">GA ĐẾN</ion-label>
-    <div class="item-address">
-      <ion-item color="lightblue">
-        <ion-title class="title-address">Quảng Ngãi - Quảng Ngãi</ion-title>
+    <div class="item-address" (click)="_openModalSearchCome()">
+      <ion-item  class="ion-item"> 
+        <ion-input class="title-address">{{GaBacNamDen}}</ion-input>
         <ion-icon name="caret-down-outline"></ion-icon>
       </ion-item>
     </div>
   </div>
   <div style="text-align: right; margin-top: -135px; margin-right: 30px">
-    <img src="../../assets/imgs/train.png" width="30px" />
+    <ion-icon  style="font-size: 30px; color: white;"  name="train-outline"></ion-icon>
+
     <br />
     <ion-icon
-      style="margin-right: 6px"
+      style="margin-right: 6px; color: white;"
       name="ellipsis-vertical-outline"
     ></ion-icon>
     <br />
-    <img src="../../assets/imgs/sort.png" width="30px" />
+    <img src="../../assets/swap_vertical_circle_white.png" width="30px" />
     <br />
     <ion-icon
-      style="margin-right: 6px"
+      style="margin-right: 6px; color: white;"
       name="ellipsis-vertical-outline"
     ></ion-icon>
     <br />
-    <img src="../../assets/imgs/location.png" width="30px" />
-  </div>
+    <ion-icon style="font-size: 30px; color: white;" name="location-outline"></ion-icon>  </div>
   <div style="margin-top: 10px">
     <ion-label class="label">NGÀY ĐI</ion-label>
-    <div class="item-date">
-      <ion-item color="lightblue">
-        <ion-title class="title-address">Thứ 2, 21/09/2020</ion-title>
+    <div class="item-date" (click)="_openModalCalendar()"> 
+      <ion-item  class="ion-item">
+        <ion-input class="title-address">{{dayGo}}</ion-input>
         <ion-icon name="calendar-outline"></ion-icon>
       </ion-item>
     </div>
   </div>
   <div style="text-align: right; margin-top: -35px; margin-right: 80px">
-    <ion-checkbox style="margin-right: 10px"></ion-checkbox>
+    <ion-checkbox [(ngModel)]="ischeck" style="margin-right: 10px"></ion-checkbox>
 </div>
     <div style="text-align: right; margin-top: -22px; margin-right: 40px">
       <ion-label style="font-size: 13px; ">Khứ hồi</ion-label>
     </div>
   
-  <div style="margin-top: 30px">
+  <div *ngIf="ischeck" class="div-datecome">
     <ion-label class="label">NGÀY ĐẾN</ion-label>
-    <div class="item-date">
-      <ion-item color="lightblue">
-        <ion-title class="title-address">Thứ 5, 24/09/2020</ion-title>
+    <div class="item-date" (click)="Calendars()">
+      <ion-item  class="ion-item">
+        <ion-input class="title-address">{{dayCome}}</ion-input>
         <ion-icon name="calendar-outline"></ion-icon>
       </ion-item>
     </div>
   </div>
-  <div style="margin-top: 10px">
+  <div style="margin-top: 30px">
     <ion-label class="label">HÀNH KHÁCH</ion-label>
-    <div class="item-custom">
-      <ion-item color="lightblue">
-            <ion-label>Notifications</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <ion-select-option value="enable">Enable</ion-select-option>
-              <ion-select-option value="mute">Mute</ion-select-option>
-              <ion-select-option value="mute_week">Mute for a week</ion-select-option>
-              <ion-select-option value="mute_year">Mute for a year</ion-select-option>
-            </ion-select>
+    <div class="item-custom" (click)="_openModalChooseNumber()" expand="block" shape="round">
+      <ion-item class="ion-item" >
+            <ion-input style="color: #000;">{{khachHang}}</ion-input>
+            <ion-title ></ion-title>
         <ion-icon name="people-outline"></ion-icon>
       </ion-item>
     </div>
   </div>
   <div style="margin-top: 10px">
     <ion-label class="label">LOẠI GHẾ</ion-label>
-    <div class="item-custom">
-      <ion-item color="lightblue">
-            <ion-label>Notifications</ion-label>
-            <ion-select value="notifications" interface="action-sheet">
-              <ion-select-option value="enable">Enable</ion-select-option>
-              <ion-select-option value="mute">Mute</ion-select-option>
-              <ion-select-option value="mute_week">Mute for a week</ion-select-option>
-              <ion-select-option value="mute_year">Mute for a year</ion-select-option>
-            </ion-select>
+    <div class="item-custom" (click)="_openModalChoosechair()">
+      <ion-item class="ion-item">
+        <ion-input style="color: #000;">{{nhomCho}}</ion-input>
         <ion-icon name="calendar-outline"></ion-icon>
       </ion-item>
     </div>
   </div>
-  <ion-button class="ion-button">Tìm kiến</ion-button>
+  <ion-button (click)="clickbutton()" color= 'orangered' class="ion-button">Tìm kiếm</ion-button>
+</div>
+</div>
+<div style="background-color: #ecf0f5;">
+  <div style="margin-top: 50px;" >
+  <ion-title class="ion-title-header">Khuyến mãi và ưu đãi</ion-title>
+  <ion-label class="ion-label-header"> Tận hưởng ưu đãi - Trải nghiệm thoải mái</ion-label>
+</div>
+<div>
+  <ion-slides pager="true" [options]="slideOpts" style="background-color: #ecf0f5;">
+    <ion-slide>
+      <div class="ion-slide">
+        <div class="div-img">
+      <img style="width: 90%; height: 400px; align-items: flex-start;border-radius: 8px;" src="../../assets/backgroundnew.png"/>
+    </div>
+    <div class="div-content-img">
+      <ion-title style="font-size: 14px; color: white">Mở bán chuyến đi thẳng</ion-title>
+      <ion-title style="font-size: 18px; color: white; margin-top: 10px; " >HÀ NỘI -- CÔN ĐẢO</ion-title>
+    <ion-title style="font-size: 14px; color: white ;margin-top: 10px;" >Hải phòng - côn đảo</ion-title>
+    <ion-title style="font-size: 14px; color: white; margin-top: 10px;">Vinh - côn đảo</ion-title>
+  </div>
+    </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="ion-slide">
+        <div class="div-img">
+      <img style="width: 70%; height: 400px; align-items: flex-start;border-radius: 8px;" src="../../assets/backgroundnew.png"/>
+    </div>
+    <div class="div-content-img">
+      <ion-title style="font-size: 14px; color: white">Mở bán chuyến đi thẳng</ion-title>
+      <ion-title style="font-size: 18px; color: white; margin-top: 10px; " >HÀ NỘI -- CÔN ĐẢO</ion-title>
+    <ion-title style="font-size: 14px; color: white ;margin-top: 10px;" >Hải phòng - côn đảo</ion-title>
+    <ion-title style="font-size: 14px; color: white; margin-top: 10px;">Vinh - côn đảo</ion-title>
+  </div>
+    </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="ion-slide">
+        <div class="div-img">
+      <img style="width: 70%; height: 400px; align-items: flex-start;border-radius: 8px;" src="../../assets/backgroundnew.png"/>
+    </div>
+    <div class="div-content-img">
+      <ion-title style="font-size: 14px; color: white">Mở bán chuyến đi thẳng</ion-title>
+      <ion-title style="font-size: 18px; color: white; margin-top: 10px; " >HÀ NỘI -- CÔN ĐẢO</ion-title>
+    <ion-title style="font-size: 14px; color: white ;margin-top: 10px;" >Hải phòng - côn đảo</ion-title>
+    <ion-title style="font-size: 14px; color: white; margin-top: 10px;">Vinh - côn đảo</ion-title>
+  </div>
+    </div>
+    </ion-slide>
+  </ion-slides>
+</div>
+</div>
+<div style="margin-top: 50px;" >
+  <ion-title class="ion-title-header">Ưu đãi tốt nhất hôm nay</ion-title>
+  <ion-label class="ion-label-header">Nhành tay đặt ngày, để mai sẽ lỡ.</ion-label>
+</div>
+<div style="background-color: white; width: 90%; margin-left: 20px; height: 125px;" >
+  <div style="margin-top: 30px;">
+    <hr/>
+    <ion-title style="font-size: 16px;">Hồ Chí Minh <ion-icon name=""></ion-icon> Nha Trang </ion-title>
+    <hr/>
+    <ion-title style="font-size: 12px;">Chủ Nhật, 25 thg 10    Chủ Nhật, 25 thg 10</ion-title>
+    <hr/>
+    <ion-title style="font-size: 18px; position: absolute;">1.000.003<small>đ</small></ion-title>
+    <div style="text-align: right; margin-right: 20px;">
+    <ion-button >Xem</ion-button>
+  </div>
+  </div>
+</div>
+<div style="background-color: white; margin-top: 30px;">
+<ion-title class="ion-title-header">Thông tin hữu ích</ion-title>
+<ion-label class="ion-label-header">Có một hành trình hơn cả mong đợi</ion-label>
+</div>
+<div style="width: 90%; background-color: white; margin-left: 20px ;margin-top: 10px;">
+  <ion-title>123</ion-title>
+</div>
 </ion-content>
+

@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { MainPage } from './main.page';
 
 import { MainPageRoutingModule } from './Main-routing.module';
+import { UserProvider} from '../../service/ultility';
+import { CalendarPage } from '../home/calendar/calendar.page';
+import { MainDayPage } from '../home/calendar/tab-calendar/mainday/mainday.page';
 
 
 @NgModule({
@@ -14,6 +17,8 @@ import { MainPageRoutingModule } from './Main-routing.module';
     IonicModule,
     MainPageRoutingModule
   ],
-  declarations: [MainPage]
+  declarations: [MainPage],
+  providers:[UserProvider, CalendarPage, MainDayPage],
+
 })
 export class MainPageModule {}

@@ -1,0 +1,40 @@
+<ion-header class="background-center" translucent="true">
+    <ion-toolbar color="blue">
+        <ion-item class="ion-item" color="blue">
+        <ion-icon (click)="goback()" class="icon" name="arrow-back-outline"></ion-icon>
+      <ion-title class="title-header">Thông tin vé</ion-title>
+    </ion-item>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-content">
+      
+      <div class="div-content" >
+        <ion-item>
+          <ion-icon class="ion-icon" name="calendar"></ion-icon>
+          <ion-title class="item-title">Thứ 5, 08/10/2020</ion-title>
+          <ion-icon class="ion-icon" name="arrow-forward-outline"></ion-icon>
+          <ion-title class="item-title">Ga Hà Nội</ion-title>
+        </ion-item>
+        </div>
+      <div>
+        <ion-item>
+          <ion-icon class="ion-icon" name="train"></ion-icon>
+          <ion-title class="ion-title">Ga Sài Gòn</ion-title>
+          <ion-icon class="ion-icons" name="arrow-forward-outline"></ion-icon>
+          <ion-title class="ion-title">Ga Hà Nội</ion-title>
+        </ion-item>
+        </div>
+      <div class="div-item">
+          <ion-item>
+              <ion-title class="title-time">06:00 - 15:54</ion-title>
+              <ion-title class="title-train">Tàu SE8</ion-title>
+          </ion-item>
+          <ion-item>
+            <ion-title class="title-time">Ghế 3 - Toa 8</ion-title>
+            <ion-title class="title-train">1.370.000đ</ion-title>
+        </ion-item>
+      </div>
+  </ion-content>
+  <ion-footer style="--background: var(--ion-background-color, #ecf0f5);">
+    <ion-button style="width: 99%;" (click)="onClick()">Tiếp tục</ion-button>
+  </ion-footer>

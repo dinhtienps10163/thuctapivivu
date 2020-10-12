@@ -5,15 +5,21 @@ import { FormsModule } from '@angular/forms';
 import { SearchGoDetailPage } from './searchgodetail.page';
 
 import { SearchGoDetailPageRoutingModule } from './searchgodetail-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
+import { service } from '../../../../service/service';
+import { HomePage } from '../../home.page';
+import { UserProvider } from 'src/service/ultility';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SearchGoDetailPageRoutingModule
+    HttpClientModule,
+    SearchGoDetailPageRoutingModule,
+    
   ],
-  declarations: [SearchGoDetailPage]
+  declarations: [SearchGoDetailPage ],
+  providers:[service, UserProvider],
 })
 export class SearchGoDetailPageModule {}
