@@ -45,7 +45,7 @@
     <ion-icon style="font-size: 30px; color: white;" name="location-outline"></ion-icon>  </div>
   <div style="margin-top: 10px">
     <ion-label class="label">NGÀY ĐI</ion-label>
-    <div class="item-date" (click)="_openModalCalendar()"> 
+    <div class="item-date" (click)="_openModalCalendargo()"> 
       <ion-item  class="ion-item">
         <ion-input class="title-address">{{dayGo}}</ion-input>
         <ion-icon name="calendar-outline"></ion-icon>
@@ -61,7 +61,7 @@
   
   <div *ngIf="ischeck" class="div-datecome">
     <ion-label class="label">NGÀY ĐẾN</ion-label>
-    <div class="item-date" (click)="Calendars()">
+    <div class="item-date" (click)="_openModalCalendarcome()">
       <ion-item  class="ion-item">
         <ion-input class="title-address">{{dayCome}}</ion-input>
         <ion-icon name="calendar-outline"></ion-icon>

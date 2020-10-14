@@ -1,9 +1,9 @@
 export class list {
-    listGaBacNam: string
-    listNhomCho: string
-    listLoaiCho: string
-    listDoiTuongKH: string
-    
+    listGaBacNam: listGaBacNam[]
+    listNhomCho: listNhomCho[]
+    listLoaiCho: listLoaiCho[]
+    listDoiTuongKH: listDoiTuongKH[]
+    //amount: number=0
 }
 export class listGaBacNam {
      id: string;
@@ -27,6 +27,7 @@ export class listDoiTuongKH{
     maPT: number
     tyLe: number
     tenPTOnline: string
+    amount: number = 0
 }
 export class listday{
     selectedTime: string

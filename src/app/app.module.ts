@@ -20,7 +20,7 @@ import { CalendarPage } from './home/calendar/calendar.page';
 import { UserProvider } from 'src/service/ultility';
 import { MainDayPage } from './home/calendar/tab-calendar/mainday/mainday.page';
 @NgModule({
-  declarations: [AppComponent , ChooseChairPage, ModalPage, HomePage, CalendarPage, ],
+  declarations: [AppComponent , ChooseChairPage, ModalPage, HomePage, ],
   entryComponents: [],
   imports: [ 
     MbscModule, BrowserModule, 

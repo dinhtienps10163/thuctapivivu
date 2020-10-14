@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
+import * as moment from 'moment';
 import { UserProvider } from '../../../service/ultility';
 
 @Component({
@@ -10,6 +11,7 @@ import { UserProvider } from '../../../service/ultility';
 })
 export class CalendarPage {
   public ischeck: boolean = false
+  public start
   public title
   public titleCome
   constructor(private NavCtr: NavController,private modalController: ModalController,
@@ -18,14 +20,10 @@ export class CalendarPage {
   eventSource = [];
   viewTitle: string;
   selectedDay = new Date();
-  markDisabled = (date: Date) => {
-    var current = new Date();
-    return date < current;
-  };
   calendar = {
     mode: 'month',
     currentDate: this.selectedDay,
-    //locate: 'vi',
+    locate: 'vi',
   };
 
   ngOnInit() {
@@ -37,7 +35,6 @@ export class CalendarPage {
       }
 
     })
-    
   }
 
   onCurrentDateChanged = (ev: Date) => {
@@ -45,7 +42,7 @@ export class CalendarPage {
 
   };
   onEventSelected(event) {
-    console.log(event.startTime)
+    //console.log(event.startTime)
 
   }
   onViewTitleChanged(title) {
@@ -53,20 +50,28 @@ export class CalendarPage {
     //console.log(title.startTime)
 
   }
-  onTimeSelected = (ev: { selectedTime: Date, events: any[] }) => {
-    console.log('Selected time: ' + ev.selectedTime + ', hasEvents: ' + (ev.events !== undefined && ev.events.length !== 0));
-    this.title = ev.selectedTime;
+  onTimeSelected = (ev: { selectedTime: Date, events: any[], startTime: Date, endTime: Date }) => {
+    //console.log('Selected time: ' + ev.selectedTime + ', hasEvents: ' + (ev.events !== undefined && ev.events.length !== 0));
+    //this.title = ev.selectedTime;
     //console.log(ev)
+    this.selectedDay = ev.selectedTime
+    const start = moment(ev.selectedTime).format('dddd-DD/MM/YYYY');
+    //const end = moment(ev.endTime).format('DD/MM/YYYY');
+    this.title = start
+    this.start = start
+    console.log(start)
+
   }
+
   clickcheckbox(event) {
     //.log(event)
   }
   click() {
     this._userProvider.titlego = this.title
-    this._userProvider.titlecome = this.title
+   // this._userProvider.titlecome = this.title
 
     this._userProvider.itemGaChange.emit(1);
-    //console.log(this.titleCome)
+    console.log(this.titleCome)
     this.modalController.dismiss()
 
   }

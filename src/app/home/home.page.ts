@@ -41,7 +41,7 @@ export class HomePage implements OnInit {
         this.nhomCho = this._userProvider.listNhomCho;
         this.GaBacNamDi = this._userProvider.listGaBacNam;
         this.dayGo = this._userProvider.titlego;
-        this.khachHang = this._userProvider.listDoiTuongKH;
+        this.khachHang = this._userProvider.listDoiTuongKH.amount + ' ' + this._userProvider.listDoiTuongKH.tenPTOnline;
         this.GaBacNamDen = this._userProvider.listGaBacNamden;
         this.dayCome = this._userProvider.titlecome;
       }
@@ -79,7 +79,20 @@ export class HomePage implements OnInit {
   Calendars() {
     this.router.navigate(['mainday/comeday'])
   }
-  async _openModalCalendar() {
+
+  async _openModalCalendarcome() {
+    const modal = await this.modalController.create({
+      component: CalendarPage,
+      cssClass: 'my-modal-component-csss'
+    })
+    await modal.present();
+    // const event: any = modal.onDidDismiss();
+    // console.log(event);
+    // this.khachHang = this._userProvider.listDoiTuongKH;
+    //   console.log(this.khachHang)
+  }
+
+  async _openModalCalendargo() {
     const modal = await this.modalController.create({
       component: CalendarPage,
       cssClass: 'my-modal-component-csss'
@@ -102,9 +115,10 @@ export class HomePage implements OnInit {
     await modal.present();
     // const event: any = modal.onDidDismiss();
     // console.log(event);
-    this.khachHang = this._userProvider.listDoiTuongKH;
-    console.log(this.khachHang)
+    // this.khachHang = this._userProvider.listDoiTuongKH
+    //console.log(this.khachHang.tenPTOnline)
   }
+
   async _openModalChoosechair() {
     const modal = await this.modalController.create({
       component: ChooseChairPage,
@@ -113,7 +127,7 @@ export class HomePage implements OnInit {
     await modal.present();
     // const event:any = modal.onDidDismiss();
     // console.log(event);
-    this.nhomCho = this._userProvider.listNhomCho;
+    // this.nhomCho = this._userProvider.listNhomCho;
     console.log(this.nhomCho)
   }
 }

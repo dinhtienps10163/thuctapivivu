@@ -18,7 +18,7 @@
   <ion-item style="text-align: center">
     <div class="daygo" (click)="goDay()">
       <ion-label>Ngày đi</ion-label>
-      <ion-title class="ion-title-day">{{title}}</ion-title>
+      <ion-title class="ion-title-day" >{{start}}</ion-title>
     </div>
     <div class="returnday" *ngIf="ischeck" (click)="comeDay()">
       <ion-label>Ngày về</ion-label>
@@ -27,7 +27,6 @@
   </ion-item>
   <div>
     <calendar
-      [formatDayTitle]="'MM-dd-yyyy'"
       [eventSource]="eventSource"
       [calendarMode]="calendar.mode"
       [currentDate]="calendar.currentDate"
@@ -35,7 +34,6 @@
       (onTitleChanged)="onViewTitleChanged($event)"
       (onTimeSelected)="onTimeSelected($event)"
       (onCurrentDateChanged)="onCurrentDateChanged($event)"
-      [markDisabled]="markDisabled()"
       step="30"
       class="calendar"
     >

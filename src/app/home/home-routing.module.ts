@@ -12,7 +12,7 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'goday',
+    path: 'mainday/goday',
     component: GoDayPage,
   },
   {

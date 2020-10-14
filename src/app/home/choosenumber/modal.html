@@ -21,10 +21,10 @@
         </div>
       </ion-item>
       <ion-item slot="end" class="ion-item">
-        <ion-button [disabled]="isDisableleft" (click)="clickminus()"><ion-icon class="icon-add" name="remove-circle-outline" ></ion-icon></ion-button>
+        <ion-button [disabled]="isDisableleft" (click)="clickminus(khachHang)"><ion-icon class="icon-add" name="remove-circle-outline" ></ion-icon></ion-button>
         
-        <ion-title>{{amount}}</ion-title>
-        <ion-button [disabled]="isDisableright" (click)="clickplus()"> <ion-icon class="icon-remove" name="add-circle-outline"></ion-icon>
+        <ion-title>{{khachHang.amount}}</ion-title>
+        <ion-button [disabled]="isDisableright" (click)="clickplus(khachHang)"> <ion-icon class="icon-remove" name="add-circle-outline"></ion-icon>
         </ion-button>
 
       </ion-item>

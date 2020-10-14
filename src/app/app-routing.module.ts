@@ -60,18 +60,7 @@ const routes: Routes = [
     path: 'informationcustomer',
     loadChildren: () => import('./booking/informationcustomer/informationcustomer.module').then(m => m.InformationCustomerPageModule)
   },
-  {
-    path: 'mainday',
-    loadChildren: () => import('./home/calendar/tab-calendar/mainday/mainday.page.module').then(m => m.MainDayPageModule)
-  },
-  {
-    path: 'goday',
-    loadChildren: () => import('./home/calendar/tab-calendar/goday/goday.module').then(m => m.GoDayPageModule)
-  },
-  {
-    path: 'comeday',
-    loadChildren: () => import('./home/calendar/tab-calendar/comeday/comeday.module').then(m => m.ComeDayPageModule)
-  },
+
   {
     path: '',
     redirectTo: 'main/home',

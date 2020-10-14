@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import { UserProvider } from 'src/service/ultility';
 
 @Component({
@@ -11,7 +12,7 @@ export class MainDayPage {
   public ischeck: boolean = false
   public dayGo
   public dayCome
-  constructor( private router: Router, public _userProvider: UserProvider) {}
+  constructor( private router: Router,private modalController: ModalController, public _userProvider: UserProvider) {}
 
   ngOnInit() {
     // this.daygos = this._userProvider.titlego 
@@ -29,5 +30,11 @@ export class MainDayPage {
   dismiss() {
     this.router.navigate(['main/home'])
   }
-
+  click() {
+     this._userProvider.titlegos = this.dayGo
+    this._userProvider.itemGaChange.emit(1);
+    console.log(this.dayGo)
+    this.modalController.dismiss()
+    //this.router.navigate(['main/home'])
+  }
 }

@@ -27,6 +27,6 @@ import { NgCalendarModule  } from 'ionic2-calendar';
     NgCalendarModule,
 
   ],
-  declarations: [HomePage, SearchGoDetailPage, ChooseChairPage, ModalPage, CalendarPage, MainDayPage, GoDayPage, ComeDayPage]
+  declarations: [HomePage, SearchGoDetailPage, ChooseChairPage, ModalPage, CalendarPage, GoDayPage, ComeDayPage]
 })
 export class HomePageModule {}

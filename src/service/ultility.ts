@@ -10,8 +10,10 @@ export class UserProvider {
     listGaBacNamden: listGaBacNam;
 
     listNhomCho: listNhomCho;
-    listDoiTuongKH: number;
-    titlego:Date;
+    listDoiTuongKH: listDoiTuongKH;
+    titlego;
+    titlegos;
+   // amount;
     titlecome:Date;
     constructor() {
 

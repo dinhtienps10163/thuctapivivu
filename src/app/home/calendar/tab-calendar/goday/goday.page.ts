@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
 import { UserProvider } from '../../../../../service/ultility';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-goday',
@@ -43,18 +44,17 @@ export class GoDayPage {
   onTimeSelected = (ev: { selectedTime: Date, events: any[] }) => {
     console.log('Selected time: ' + ev.selectedTime + ', hasEvents: ' + (ev.events !== undefined && ev.events.length !== 0));
     this.title = ev.selectedTime;
-    this._userProvider.titlego = this.title
+    const start = moment(ev.selectedTime).format('dddd-DD/MM/YYYY');
+    this._userProvider.titlego = start
     this._userProvider.itemGaChange.emit(1);
     //console.log(this.title)
+    // this._userProvider.titlego = this.title
+    // this._userProvider.itemGaChange.emit(1);
+    // console.log(this.title)
+    // //this.modalController.dismiss()
   }
   clickcheckbox(event) {
     //.log(event)
   }
-  click() {
-    this._userProvider.titlego = this.title
-    this._userProvider.itemGaChange.emit(1);
-    console.log(this.title)
-    //this.modalController.dismiss()
-    this.router.navigate(['main/home'])
-  }
+  
 }
