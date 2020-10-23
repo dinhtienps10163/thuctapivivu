@@ -8,10 +8,16 @@
 .content{
     font-size: 14px;
     margin-top: 3px;
+   // --background: var(--ion-background-color, #fff)
 }
 .item{
-    width: 90%;
+    width: 100%;
+    background-color: aqua;
 }
 .ion-content{
     //width: 100%;
+}
+.selected{
+    color: blue;
+    --background: var(--ion-background-color, #ecf0f5) !important;
 }

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ComeDayPage } from './calendar/tab-calendar/comeday/comeday.page';
-import { GoDayPage } from './calendar/tab-calendar/goday/goday.page';
+import { ChooseTripPage } from '../booking/choosetrip/choosetrip.page';
+import { ComeDayPage } from './calendar/comeday/comeday.page';
+import { GoDayPage } from './calendar/goday/goday.page';
 import { HomePage } from './home.page';
 import { SearchGoPage } from './search/searchgo/searchgo.page';
-import { SearchGoDetailPage } from './search/searchgodetail/searchgodetail.page';
 
 const routes: Routes = [
   {
@@ -12,13 +12,10 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'mainday/goday',
-    component: GoDayPage,
+    path: 'choosetrip',
+    component: ChooseTripPage,
   },
-  {
-    path: 'comeday',
-    component: ComeDayPage,
-  },
+ 
 ];
 
 @NgModule({

@@ -21,14 +21,6 @@ const routes: Routes = [
     loadChildren: () => import('./home/search/searchcome/searchcome.module').then(m => m.SearchComePageModule)
   },
   {
-    path: 'searchgo/searchgodetail',
-    loadChildren: () => import('./home/search/searchgodetail/searchgodetail.module').then(m => m.SearchGoDetailPageModule)
-  },
-  {
-    path: 'searchcomedetail',
-    loadChildren: () => import('./home/search/searchcomedetail/searchcomedetail.module').then(m => m.SearchComeDetailPageModule)
-  },
-  {
     path: 'loginuser',
     loadChildren: () => import('./login/loginuser/loginuser.module').then(m => m.LoginUserPageModule)
   },
@@ -60,7 +52,10 @@ const routes: Routes = [
     path: 'informationcustomer',
     loadChildren: () => import('./booking/informationcustomer/informationcustomer.module').then(m => m.InformationCustomerPageModule)
   },
-
+  {
+    path: 'itemtoaxeconponent',
+    loadChildren: () => import('./component/itemtoaxe.module.component').then(m => m.ItemToaXeComponentModule)
+  },
   {
     path: '',
     redirectTo: 'main/home',

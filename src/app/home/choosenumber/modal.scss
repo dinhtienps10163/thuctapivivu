@@ -1,28 +1,31 @@
 .icon{
     font-size: 25px;
-    
 }
 .title-header{
     font-size: 18px;
     text-align: center;
 }
 .title{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 .content{
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 3px;
 }
 .icon-add{
-    font-size: 25px;
+    font-size: 15px;
 }
 .icon-remove{
-    font-size: 25px;
+    font-size: 15px;
 }
 .ion-item{
-    --background: var(--ion-background-color, #ecf0f5);
-    height: 70px;
+    --background: var(--ion-background-color, #fff);
+    height: 75px;
+}
+.ion-items{
+    --background: var(--ion-background-color, #fff);
+    height: 75px;
 }
 .ion-button{
     

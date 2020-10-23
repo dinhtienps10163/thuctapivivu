@@ -20,9 +20,8 @@
           <ion-title class="content">{{khachHang.nhom}}</ion-title>
         </div>
       </ion-item>
-      <ion-item slot="end" class="ion-item">
-        <ion-button [disabled]="isDisableleft" (click)="clickminus(khachHang)"><ion-icon class="icon-add" name="remove-circle-outline" ></ion-icon></ion-button>
-        
+      <ion-item slot="end" class="ion-items">
+        <ion-button [disabled]="!khachHang.amount" (click)="clickminus(khachHang)"><ion-icon class="icon-add" name="remove-circle-outline" ></ion-icon></ion-button>
         <ion-title>{{khachHang.amount}}</ion-title>
         <ion-button [disabled]="isDisableright" (click)="clickplus(khachHang)"> <ion-icon class="icon-remove" name="add-circle-outline"></ion-icon>
         </ion-button>
@@ -30,9 +29,8 @@
       </ion-item>
     </ion-item>
   </div>
-  <hr />
-  <ion-icon name=""> </ion-icon>
   <div style="width: 90%; margin-left: 20px">
+    <ion-icon name="information-circle-outline"> </ion-icon>
     <ion-label style="font-size: 12px"
       >Trẻ em 6 tuổi được miễn phí vé nếu ngồi cùng phụ huynh. (Mỗi phụ huynh
       được ngồi cùng tối đa 2 trẻ, từ trẻ thứ 3 trở đi phải mua vé trẻ em bình

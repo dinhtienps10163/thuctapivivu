@@ -12,7 +12,7 @@
   <ion-label class="label">GA ĐI</ion-label>
   <div class="item-address" (click)="_openModalSearchGo()">
     <ion-item  class="ion-item">
-      <ion-input class="title-address">{{GaBacNamDi}}</ion-input>
+      <ion-input class="title-address"[(ngModel)]="GaBacNamDi"></ion-input>
       <ion-icon name="caret-down-outline"></ion-icon>
     </ion-item>
   </div>
@@ -20,8 +20,8 @@
   <div style="margin-top: 10px; ">
     <ion-label class="label">GA ĐẾN</ion-label>
     <div class="item-address" (click)="_openModalSearchCome()">
-      <ion-item  class="ion-item"> 
-        <ion-input class="title-address">{{GaBacNamDen}}</ion-input>
+      <ion-item  class="ion-item">
+        <ion-input class="title-address"[(ngModel)]="GaBacNamDen"></ion-input>
         <ion-icon name="caret-down-outline"></ion-icon>
       </ion-item>
     </div>
@@ -35,8 +35,9 @@
       name="ellipsis-vertical-outline"
     ></ion-icon>
     <br />
-    <img src="../../assets/swap_vertical_circle_white.png" width="30px" />
-    <br />
+    <div (click)="selectedMovie()">
+      <ion-icon  style="font-size: 28px; color: white;" name="swap-vertical-outline"></ion-icon>
+    </div>
     <ion-icon
       style="margin-right: 6px; color: white;"
       name="ellipsis-vertical-outline"
@@ -47,7 +48,7 @@
     <ion-label class="label">NGÀY ĐI</ion-label>
     <div class="item-date" (click)="_openModalCalendargo()"> 
       <ion-item  class="ion-item">
-        <ion-input class="title-address">{{dayGo}}</ion-input>
+        <ion-input class="title-address" [(ngModel)]="dayGo"></ion-input>
         <ion-icon name="calendar-outline"></ion-icon>
       </ion-item>
     </div>
@@ -60,19 +61,19 @@
     </div>
   
   <div *ngIf="ischeck" class="div-datecome">
-    <ion-label class="label">NGÀY ĐẾN</ion-label>
+    <ion-label class="label">NGÀY VỀ</ion-label>
     <div class="item-date" (click)="_openModalCalendarcome()">
       <ion-item  class="ion-item">
-        <ion-input class="title-address">{{dayCome}}</ion-input>
+        <ion-input class="title-address"[(ngModel)]="dayCome"></ion-input>
         <ion-icon name="calendar-outline"></ion-icon>
       </ion-item>
     </div>
   </div>
   <div style="margin-top: 30px">
     <ion-label class="label">HÀNH KHÁCH</ion-label>
-    <div class="item-custom" (click)="_openModalChooseNumber()" expand="block" shape="round">
+    <div class="item-custom" (click)="_openModalChooseNumber()">
       <ion-item class="ion-item" >
-            <ion-input style="color: #000;">{{khachHang}}</ion-input>
+            <ion-input style="color: #000;"[(ngModel)]="khachHang"></ion-input>
             <ion-title ></ion-title>
         <ion-icon name="people-outline"></ion-icon>
       </ion-item>
@@ -82,12 +83,12 @@
     <ion-label class="label">LOẠI GHẾ</ion-label>
     <div class="item-custom" (click)="_openModalChoosechair()">
       <ion-item class="ion-item">
-        <ion-input style="color: #000;">{{nhomCho}}</ion-input>
+        <ion-input style="color: #000;"[(ngModel)]="nhomCho"></ion-input>
         <ion-icon name="calendar-outline"></ion-icon>
       </ion-item>
     </div>
   </div>
-  <ion-button (click)="clickbutton()" color= 'orangered' class="ion-button">Tìm kiếm</ion-button>
+  <ion-button (click)="gobooking()" color= 'orangered' class="ion-button">Tìm kiếm</ion-button>
 </div>
 </div>
 <div style="background-color: #ecf0f5;">
@@ -95,8 +96,8 @@
   <ion-title class="ion-title-header">Khuyến mãi và ưu đãi</ion-title>
   <ion-label class="ion-label-header"> Tận hưởng ưu đãi - Trải nghiệm thoải mái</ion-label>
 </div>
-<div>
-  <ion-slides pager="true" [options]="slideOpts" style="background-color: #ecf0f5;">
+<div >
+  <ion-slides pager="true" [options]="slideOpts" style="background-color: #ecf0f5;  ">
     <ion-slide>
       <div class="ion-slide">
         <div class="div-img">

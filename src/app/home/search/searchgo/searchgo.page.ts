@@ -4,7 +4,6 @@ import { ModalController, NavController } from '@ionic/angular';
 import { UserProvider } from 'src/service/ultility';
 import { listGaBacNam } from '../../../../service/model';
 import { service } from '../../../../service/service';
-import { SearchGoDetailPage } from '../searchgodetail/searchgodetail.page';
 
 @Component({
   selector: 'app-searchgo',
@@ -16,28 +15,51 @@ export class SearchGoPage {
 
   public listGaBacNam: listGaBacNam[] = [];
   public GaBacNam;
-  constructor(private router: Router, private modalController: ModalController, private NavCtr: NavController, private _service: service,public _userProvider: UserProvider,) { }
+  public MaGa;
+  constructor(private router: Router, private modalController: ModalController, private NavCtr: NavController, private _service: service, public _userProvider: UserProvider,) { }
   ngOnInit() {
+    this.getdata();
+    
+  }
+  getdata() {
     this._service.getcomments().subscribe(
       data => {
         this.listGaBacNam = data.listGaBacNam;
-        console.log(listGaBacNam)
+        if(this._userProvider.gaBacNamSelected){
+          this.listGaBacNam.forEach((item)=>{ item.selected = item.tenGa == this._userProvider.gaBacNamSelected.tenGa})
+          this.selecteditem = this._userProvider.gaBacNamSelected;
+        }
+      });
+      //nhận dữ liệu từ home.page
+      this._userProvider.itemGaChange.pipe().subscribe((data) => {
+        if (data) {
+          this.selecteditem = this._userProvider.gaBacNamSelected
+         // console.log("item selected : " + this.selecteditem)
+        }
       })
   }
-  async _openModalSearchGoDetail() {
-    const modal = await this.modalController.create({
-      component: SearchGoDetailPage,
-      cssClass: 'my-modal-component-cssss'
-    })
-    await modal.present();
-    // const event: any = modal.onDidDismiss();
-    // console.log(event);
-    // this.khachHang = this._userProvider.listDoiTuongKH;
-    //   console.log(this.khachHang)
+  search(event: any) {
+    //console.log(event)
+
+    const val = event.target.value;
+    if (val && val.trim() !== '') {
+      this.listGaBacNam = this.listGaBacNam.filter((GaBacNam) => {
+        return (GaBacNam.tenGa.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    } else {
+      this.getdata();
+    }
   }
+  selecteditem: listGaBacNam
   clickitem(GaBacNam: listGaBacNam) {
-    console.log(GaBacNam)
-    this._userProvider.listGaBacNam = GaBacNam;
+    this.selecteditem = GaBacNam
+    this._userProvider.gaBacNamSelected = this.selecteditem
+    //console.log(GaBacNam)
+    this.GaBacNam = GaBacNam.tenGa
+    
+    this.MaGa = GaBacNam.maGa
+    this._userProvider.maGaDi = this.MaGa
+    this._userProvider.listGaBacNam = this.GaBacNam;
     this._userProvider.itemGaChange.emit(1);
     this.modalController.dismiss()
   }

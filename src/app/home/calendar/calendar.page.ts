@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
+import { NgCalendarModule } from 'ionic2-calendar';
 import * as moment from 'moment';
 import { UserProvider } from '../../../service/ultility';
 
@@ -14,9 +15,11 @@ export class CalendarPage {
   public start
   public title
   public titleCome
+  startTime;
+  startEnd;
   constructor(private NavCtr: NavController,private modalController: ModalController,
-   private router: Router, public _userProvider: UserProvider) { }
-
+  private router: Router, public _userProvider: UserProvider) { }
+  
   eventSource = [];
   viewTitle: string;
   selectedDay = new Date();
@@ -24,8 +27,8 @@ export class CalendarPage {
     mode: 'month',
     currentDate: this.selectedDay,
     locate: 'vi',
-  };
-
+    noEventsLabel: true,
+    };
   ngOnInit() {
     // this.daygos = this._userProvider.titlego 
     // console.log(this.daygos)
@@ -35,8 +38,16 @@ export class CalendarPage {
       }
 
     })
+    console.log(this.startTime)
+    console.log(this.startEnd)
   }
-
+  onChange(){
+    console.log('onchange')
+  }
+  onRangeChanged = (ev: { startTime: Date, endTime: Date }) => {
+    this.startTime = ev.startTime;
+    this.startEnd = ev.endTime;
+  };
   onCurrentDateChanged = (ev: Date) => {
     //console.log('Date: ' + ev);
 

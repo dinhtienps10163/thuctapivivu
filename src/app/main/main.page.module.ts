@@ -7,7 +7,7 @@ import { MainPage } from './main.page';
 import { MainPageRoutingModule } from './Main-routing.module';
 import { UserProvider} from '../../service/ultility';
 import { CalendarPage } from '../home/calendar/calendar.page';
-import { MainDayPage } from '../home/calendar/tab-calendar/mainday/mainday.page';
+import { SearchGoPage } from '../home/search/searchgo/searchgo.page';
 
 
 @NgModule({
@@ -15,10 +15,10 @@ import { MainDayPage } from '../home/calendar/tab-calendar/mainday/mainday.page'
     CommonModule,
     FormsModule,
     IonicModule,
-    MainPageRoutingModule
+    MainPageRoutingModule,
   ],
   declarations: [MainPage],
-  providers:[UserProvider, CalendarPage, MainDayPage],
+  providers:[UserProvider, CalendarPage],
 
 })
 export class MainPageModule {}

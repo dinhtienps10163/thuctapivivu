@@ -4,16 +4,23 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { ChooseTripPage } from './choosetrip.page';
 
-import { ChooseTripPageRoutingModule } from './choosetrip-routing.module';
-
+//import { ChooseTripPageRoutingModule } from './choosetrip-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ChooseTripPageRoutingModule
+    //ChooseTripPageRoutingModule,
+    RouterModule.forChild([
+      {path: "", 
+      component: ChooseTripPage}
+    ]),
+    HttpClientModule,
   ],
-  declarations: [ChooseTripPage]
+  declarations: [ChooseTripPage],
+
 })
 export class ChooseTripPageModule {}

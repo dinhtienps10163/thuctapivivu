@@ -1,15 +1,16 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoadingController, ModalController } from '@ionic/angular';
-import { listNhomCho } from '../../service/model';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ModalController, NavController } from '@ionic/angular';
 import { ChooseChairPage } from './choosechair/choosechair.page';
 import { ModalPage } from './choosenumber/modal';
 import { UserProvider } from '../../service/ultility';
-import { ResourceLoader } from '@angular/compiler';
 import { CalendarPage } from './calendar/calendar.page';
 import { SearchGoPage } from './search/searchgo/searchgo.page';
 import { SearchComePage } from './search/searchcome/searchcome.page';
-import { MainDayPage } from './calendar/tab-calendar/mainday/mainday.page';
+import { GoDayPage } from './calendar/goday/goday.page';
+import { ComeDayPage } from './calendar/comeday/comeday.page';
+import { ChooseTripPage } from '../booking/choosetrip/choosetrip.page';
+import { ProviderBooking } from 'src/service/providerBooking';
 
 @Component({
   selector: 'app-home',
@@ -25,31 +26,67 @@ export class HomePage implements OnInit {
   };
   public nhomCho;
   public GaBacNamDi;
+  public khachHang;
+  public doiTuongkhachHang;
+  public GaBacNamDen;
   public dayGo;
   public dayCome;
-  public khachHang;
-  public GaBacNamDen;
-  constructor(private router: Router,
+
+  public maGaDi;
+  public maGaDen;
+  public ngayDi;
+  public loaiCho;
+  data
+  constructor(
+    private router: Router,
     public calendar: CalendarPage,
-    private modalController: ModalController, public _userProvider: UserProvider) { }
+    private modalController: ModalController, 
+    public _userProvider: UserProvider,
+    public _providerBooking: ProviderBooking,
+    private navCtrl: NavController) { }
 
   ngOnInit() {
     // this.daygos = this._userProvider.titlego 
     // console.log(this.daygos)
+    //this._userProvider.ischeck = this.ischeck
     this._userProvider.itemGaChange.pipe().subscribe((data) => {
       if (data) {
         this.nhomCho = this._userProvider.listNhomCho;
         this.GaBacNamDi = this._userProvider.listGaBacNam;
-        this.dayGo = this._userProvider.titlego;
-        this.khachHang = this._userProvider.listDoiTuongKH.amount + ' ' + this._userProvider.listDoiTuongKH.tenPTOnline;
+        this.khachHang = this._userProvider.listAmountKH + ' ' + this._userProvider.listDoiTuongKH;
         this.GaBacNamDen = this._userProvider.listGaBacNamden;
-        this.dayCome = this._userProvider.titlecome;
-      }
+        this.dayGo = this._userProvider.titlego;
+        this.dayCome = this._userProvider.titleCome;
 
+        this.maGaDi = this._userProvider.maGaDi;
+        this.maGaDen = this._userProvider.maGaDen;
+        //this.ngayDi = this._userProvider.ngayDi;
+        this.loaiCho = this._userProvider.loaiCho;
+        //console.log(this._userProvider)
+      }
     })
   }
-  selectedMovie(event) {
-    console.log(event)
+
+  gobooking() {
+    // this.navCtrl.navigateForward('choosetrip');
+    this.router.navigate(['choosetrip']);
+    this._providerBooking.maGaDi = this.maGaDi
+    this._providerBooking.maGaDen = this.maGaDen
+    this._providerBooking.ngayDi = this.dayGo
+    this._providerBooking.loaiCho = this.loaiCho
+    this._providerBooking.itemChange.emit(1);
+
+    //this.router.navigate(['choosetrip'])
+    // this._userProvider
+    // this.GaBacNamDen
+    // this.dayGo
+    // this.dayCome
+    // this.nhomCho
+    // this.khachHang
+
+  }
+  selectedMovie() {
+    
   }
   async _openModalSearchCome() {
     const modal = await this.modalController.create({
@@ -70,64 +107,58 @@ export class HomePage implements OnInit {
     await modal.present();
     // const event: any = modal.onDidDismiss();
     // console.log(event);
-    // this.khachHang = this._userProvider.listDoiTuongKH;
-    //   console.log(this.khachHang)
-  }
-  Calendar() {
-    this.router.navigate(['mainday/goday'])
-  }
-  Calendars() {
-    this.router.navigate(['mainday/comeday'])
+    //this._userProvider.listGaBacNam = this.GaBacNamDi;
+    //this._userProvider.itemGaChange.emit(1);
   }
 
   async _openModalCalendarcome() {
     const modal = await this.modalController.create({
-      component: CalendarPage,
-      cssClass: 'my-modal-component-csss'
+      component: ComeDayPage,
+      cssClass: 'my-modal-calendarcome-css'
     })
     await modal.present();
-    // const event: any = modal.onDidDismiss();
-    // console.log(event);
-    // this.khachHang = this._userProvider.listDoiTuongKH;
-    //   console.log(this.khachHang)
+   // console.log(this.dayCome);
+    this._userProvider.titleCome = this.dayCome;
+    this._userProvider.titlego = this.dayGo;
+
+    this._userProvider.itemGaChange.emit(1);
   }
 
   async _openModalCalendargo() {
     const modal = await this.modalController.create({
-      component: CalendarPage,
-      cssClass: 'my-modal-component-csss'
+      component: GoDayPage,
+      cssClass: 'my-modal-calendargo-css'
     })
     await modal.present();
-    // const event: any = modal.onDidDismiss();
-    // console.log(event);
-    // this.khachHang = this._userProvider.listDoiTuongKH;
-    //   console.log(this.khachHang)
+    this._userProvider.titlego = this.dayGo;
+    this._userProvider.itemGaChange.emit(1);
+    //   console.log(this.dayGo)
   }
-  clickbutton() {
-    this.router.navigate(['choosetrip'])
-
-  }
+  
   async _openModalChooseNumber() {
     const modal = await this.modalController.create({
       component: ModalPage,
-      cssClass: 'my-modal-component-css'
+      cssClass: 'my-modal-choosenumber-css'
     })
     await modal.present();
     // const event: any = modal.onDidDismiss();
     // console.log(event);
-    // this.khachHang = this._userProvider.listDoiTuongKH
-    //console.log(this.khachHang.tenPTOnline)
+    this._userProvider.listAmountKH = this.khachHang;
+    this._userProvider.itemGaChange.emit(1);
   }
 
   async _openModalChoosechair() {
     const modal = await this.modalController.create({
       component: ChooseChairPage,
-      cssClass: 'my-modal-component-scss',
+      cssClass: 'my-modal-choosechair-css',
     })
     await modal.present();
     // const event:any = modal.onDidDismiss();
     // console.log(event);
     // this.nhomCho = this._userProvider.listNhomCho;
-    console.log(this.nhomCho)
+    //this._userProvider.listNhomCho = this.nhomCho;
+    //this._userProvider.itemselected = this.nhomCho
+    //this._userProvider.itemGaChange.emit(1);
+   
   }
 }

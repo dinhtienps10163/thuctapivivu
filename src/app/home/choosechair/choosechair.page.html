@@ -8,8 +8,9 @@
 </ion-header>
 <ion-content class="ion-content">
   <ion-item
-    class="item"
-    (click)="clickitem(nhomCho.name)"
+    class="items"
+    [class.selected]="nhomCho.selected"
+    (click)="clickitem(nhomCho)"
     *ngFor=" let nhomCho of listNhomCho"
   >
     <ion-icon class="icon" name="people"></ion-icon>

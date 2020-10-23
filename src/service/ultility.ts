@@ -1,21 +1,28 @@
 import { EventEmitter, Injectable} from '@angular/core';
-import { listday, listGaBacNam, listNhomCho, listDoiTuongKH, } from './model';
+import { listGaBacNam, listNhomCho, listDoiTuongKH, } from './model';
 
 
-@Injectable()
+@Injectable({ providedIn: 'root'})
 export class UserProvider {
     itemGaChange = new EventEmitter();
     ischeck: boolean = true;
     listGaBacNam: listGaBacNam;
     listGaBacNamden: listGaBacNam;
-
     listNhomCho: listNhomCho;
     listDoiTuongKH: listDoiTuongKH;
+    listAmountKH: listDoiTuongKH;
     titlego;
-    titlegos;
-   // amount;
-    titlecome:Date;
-    constructor() {
+    titleCome;
+    nhonChoselected:any;
+    gaBacNamSelected;
+    gaBacNamSelectedcome;
+    
+    maGaDi;
+    maGaDen;
+    ngayDi;
+    loaiCho;
+    // constructor() {
 
-    }
+    // }
+   
 }
