@@ -30,6 +30,7 @@
     "angular-pipes": "^10.0.0",
     "cordova": "^10.0.0",
     "ion2-calendar": "^3.0.0-rc.0",
+    "ionic-stepper": "^1.1.0",
     "ionic2-calendar": "^0.6.6",
     "moment": "^2.29.1",
     "primeng": "^10.0.3",

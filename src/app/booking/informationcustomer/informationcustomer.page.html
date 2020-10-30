@@ -11,11 +11,58 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-content">
+<div>
+  <ion-item style="--background: var(--ion-background-color, #fff)">
+    <ion-label style="font-size: 16px; font-weight: bold;"> THÔNG TIN HÀNH KHÁCH</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-title>Người lớn</ion-title>
+    <small>Nhập thông tin</small>
+  </ion-item>
+  <div [hidden]="!isHidden">
+  <ion-item>
+    <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
+  </ion-item>
+</div>
+<ion-item>
+  <ion-title>Sinh viên</ion-title>
+  <small>Nhập thông tin</small>
+</ion-item>
+<div [hidden]="!isHidden">
+<ion-item>
+  <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
+</ion-item>
+</div>
+<ion-item>
+  <ion-title>Người lớn tuổi (từ 60 tuổi)</ion-title>
+  <small>Nhập thông tin</small>
+</ion-item>
+<div [hidden]="isHidden">
+<ion-item>
+  <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
+</ion-item>
+</div>
+</div>
+  <div>
   <ion-item style="--background: var(--ion-background-color, #ecf0f5)">
     <ion-label style="font-size: 18px"> THÔNG TIN HÀNH KHÁCH</ion-label>
   </ion-item>
   <ion-item>
-    <ion-select> </ion-select>
+    <ion-select placeholder="Người lớn">
+      <ion-select-option value="f">Người lớn</ion-select-option>
+      <ion-select-option value="m">Sinh Viên</ion-select-option>
+      <ion-select-option value="g">Người lớn tuổi (từ 60 tuổi)</ion-select-option>
+
+    </ion-select>
   </ion-item>
   <ion-item>
     <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
@@ -23,6 +70,8 @@
   <ion-item>
     <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
   </ion-item>
+</div>
+
   <ion-item style="--background: var(--ion-background-color, #ecf0f5)">
     <ion-label style="font-size: 18px">THÔNG TIN NGƯỜI ĐẶT</ion-label>
   </ion-item>

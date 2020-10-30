@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
 import { UserProvider } from 'src/service/ultility';
-import { listGaBacNam } from '../../../../service/model';
+import { listGaBacNam, listLoaiCho } from '../../../../service/model';
 import { service } from '../../../../service/service';
 
 @Component({
@@ -11,9 +11,15 @@ import { service } from '../../../../service/service';
   styleUrls: ['searchgo.page.scss'],
 })
 export class SearchGoPage {
-
+  
+  // slideOpts = {
+  //   initialSlide: 0,
+  //   speed: 400,
+  //   slidesPerView: 1.2,
+  // };
 
   public listGaBacNam: listGaBacNam[] = [];
+  public listLoaiCho: listLoaiCho[] = [];
   public GaBacNam;
   public MaGa;
   constructor(private router: Router, private modalController: ModalController, private NavCtr: NavController, private _service: service, public _userProvider: UserProvider,) { }
@@ -28,6 +34,8 @@ export class SearchGoPage {
         if(this._userProvider.gaBacNamSelected){
           this.listGaBacNam.forEach((item)=>{ item.selected = item.tenGa == this._userProvider.gaBacNamSelected.tenGa})
           this.selecteditem = this._userProvider.gaBacNamSelected;
+
+          console.log(data.listLoaiCho)
         }
       });
       //nhận dữ liệu từ home.page

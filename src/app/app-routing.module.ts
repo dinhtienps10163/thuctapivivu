@@ -33,10 +33,6 @@ const routes: Routes = [
     loadChildren: () => import('./login/login/login.module').then(m => m.LoginPageModule)
   },
   {
-    path: 'calendar',
-    loadChildren: () => import('./home/calendar/calendar.module').then(m => m.CalendarPageModule)
-  },
-  {
     path: 'choosetrip',
     loadChildren: () => import('./booking/choosetrip/choosetrip.module').then(m => m.ChooseTripPageModule)
   },
@@ -52,9 +48,21 @@ const routes: Routes = [
     path: 'informationcustomer',
     loadChildren: () => import('./booking/informationcustomer/informationcustomer.module').then(m => m.InformationCustomerPageModule)
   },
+   {
+    path: 'ghephu',
+    loadChildren: () => import('./component/ghephu/ghephu.component.module').then(m => m.GhePhuComponentModule)
+  },
   {
-    path: 'itemtoaxeconponent',
-    loadChildren: () => import('./component/itemtoaxe.module.component').then(m => m.ItemToaXeComponentModule)
+    path: 'ngoidieuhoa',
+    loadChildren: () => import('./component/ngoidieuhoa/ngoidieuhoa.component.module').then(m => m.NgoiDieuHoaComponentModule)
+  },
+  {
+    path: 'khoang4',
+    loadChildren: () => import('./component/khoang4/khoang4.component.module').then(m => m.Khoang4ComponentModule)
+  },
+  {
+    path: 'khoang6',
+    loadChildren: () => import('./component/khoang6/khoang6.component.module').then(m => m.Khoang6ComponentModule)
   },
   {
     path: '',

@@ -3,18 +3,15 @@ import { listGaBacNam, listNhomCho, listDoiTuongKH, } from './model';
 
 
 @Injectable({ providedIn: 'root'})
-export class ProviderBooking {
+export class ProviderChooseSeat {
     itemChange = new EventEmitter();
-    maGaDi;
-    maGaDen;
-    ngayDi;
+    dmTauId;
     loaiCho;
-    
-    dayGo;
-    dayCome;
-    gaGo;
-    gaCome;
-
+    toaSo;
+    toaNo;
+    slToiThieu;
+    khongLayGiaVe;
+    BookingCode;
     // constructor() {
 
     // }

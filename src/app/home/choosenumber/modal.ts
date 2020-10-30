@@ -18,6 +18,7 @@ export class ModalPage {
  // public amount = 0;
   public tenPTOnline;
   public amount;
+  public soluong;
   isDisableleft: boolean = true
   isDisableright: boolean = false
   constructor(private zone: NgZone , private modalController: ModalController, private _service: service,
@@ -37,73 +38,72 @@ export class ModalPage {
           this.tenPTOnline = this._userProvider.listDoiTuongKH;
         }
       })
+      
   }
   clickitem() {
     this.modalController.dismiss();
-     this._userProvider.listDoiTuongKH = this.tenPTOnline
+    //this._userProvider.listDoiTuongKH = this.tenPTOnline
     //this._userProvider.listDoiTuongKH = this.amount
-    this._userProvider.itemGaChange.emit(1);
+    //this._userProvider.itemGaChange.emit(1);
   }
   dismiss() {
     this.modalController.dismiss()
   }
   clickplus(item) {
-    this.tenPTOnline = item.tenPTOnline
-      //item.amount = null
-      for (let item = 0; item < this.listDoiTuongKH.length; item++) {
-        const element = this.listDoiTuongKH[item];
-        console.log(element.amount)
-        if(element.amount == 4){
-          
-          return;
-        }
-      }
-      if(item.amount.length == 4){
-        return;
-      }
+    var listarr = this.listDoiTuongKH.map((item) => {return item.amount})
+    let count = listarr.reduce((c, total:any) => {return total += c});
+     // console.log(listname);
+      
+      
     this.zone.run(() => {
       item.amount ++
     })
-    this._userProvider.listDoiTuongKH = this.tenPTOnline;
-    this.amount = item.amount;
-
-    this._userProvider.listAmountKH = this.amount;
-    item.amount = this._userProvider.listAmountKH;
-    this._userProvider.itemGaChange.emit(1);
-
-    if (item.amount == 4) {
+    if(listarr){
+      var listname = this.listDoiTuongKH.map((item) => {return item.amount > 0 ? (" " + item.amount + " " +item.tenPTOnline) : ''})
+      this.tenPTOnline = listname
+      this._userProvider.listDoiTuongKH = this.tenPTOnline;
+      //this.amount = item.amount;
+      //this._userProvider.listAmountKH = this.amount;
+      //item.amount = this._userProvider.listAmountKH;
+      this._userProvider.itemGaChange.emit(1);
+    }
+     
+    if(count == 4){
+      this.isDisableright = true
+      return;
+    }
+    if (count == 3) {
       this.isDisableright = true
       //this.isDisableleft = false
     }
-    else if (item.amount == 1) {
+    else if (count == 1) {
       this.isDisableleft = false
     }
     else {
       this.isDisableright = false
     }
-    //console.log(item.lenght)
 
-    //console.log(this.tenPTOnline)
-    //console.log(this.amount)
   }
   clickminus(item) {
-    this.tenPTOnline = item.tenPTOnline
+    
+    var listarr = this.listDoiTuongKH.map((item) => {return item.amount})
+    let count = listarr.reduce((c, total:any) => {return total += c});
     //item.amount = null
   this.zone.run(() => {
     item.amount --
   })
+  this.tenPTOnline = item.tenPTOnline
   this._userProvider.listDoiTuongKH = this.tenPTOnline;
   this.amount = item.amount;
-  this._userProvider.itemGaChange.emit(1);
-
   this._userProvider.listAmountKH = this.amount;
-  item.amount = this._userProvider.listAmountKH;
+  this._userProvider.itemGaChange.emit(1);
+  //item.amount = this._userProvider.listAmountKH;
 
-    if (item.amount == 0) {
+    if (count == 0) {
       this.isDisableleft = true
       //this.isDisableright = false
     }
-    else if (item.amount == 3) {
+    else if (count == 4) {
       this.isDisableright = false
     }
     else {

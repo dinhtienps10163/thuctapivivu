@@ -1,0 +1,84 @@
+{
+    "ToaXe": {
+      "Id": 1,
+      "DMTauVatLyId": 1,
+      "ToaNo": 3,
+      "ToaSo": "1",
+      "ToaSoSX": 5,
+      "ToaXe": "A64L",
+      "ToaXeStatus": 1,
+      "ToaXeLayout": 64,
+      "ChoVatLyKeys": [
+        "sample string 1",
+        "sample string 2"
+      ],
+      "ChoPhuKeys": [
+        "sample string 1",
+        "sample string 2"
+      ],
+      "ListLoaiCho": [
+        "sample string 1",
+        "sample string 2"
+      ],
+      "ToaXeDienGiai": "sample string 13",
+      "NhomChoWeb": "sample string 1"
+    },
+    "Chos": [
+      {
+        "Id": 1,
+        "DMToaXeVatLyId": 1,
+        "DMLoaiChoId": 1,
+        "ChoSo": 1,
+        "LoaiCho": "NML",
+        "GiaVe": 600,
+        "TicketId": 7,
+        "ToaXe": "1",
+        "ToaSo": "1",
+        "ToaXeLayout": 64,
+        "Status": {
+          "Status": 1,
+          "TicketId": 1,
+          "Duration": 1,
+          "TenGaDi": "An Hòa",
+          "TenGaDen": "Âm thanh",
+          "LyDo": "chổ trống có thể bán"
+        },
+        "VeVatLyKeys": [
+          "sample string 1",
+          "sample string 2"
+        ],
+        "NguyenGia": 13,
+        "TienThu": 14,
+        "BaoHiem": 15,
+        "GiamGiaTG": 16
+      },
+      {
+        "Id": 1,
+        "DMToaXeVatLyId": 2,
+        "DMLoaiChoId": 3,
+        "ChoSo": 4,
+        "LoaiCho": "sample string 5",
+        "GiaVe": 6,
+        "TicketId": 7,
+        "ToaXe": "sample string 8",
+        "ToaSo": "sample string 9",
+        "ToaXeLayout": 64,
+        "Status": {
+          "Status": 1,
+          "TicketId": 1,
+          "Duration": 1,
+          "TenGaDi": "sample string 2",
+          "TenGaDen": "sample string 3",
+          "LyDo": "sample string 4"
+        },
+        "VeVatLyKeys": [
+          "sample string 1",
+          "sample string 2"
+        ],
+        "NguyenGia": 13,
+        "TienThu": 14,
+        "BaoHiem": 15,
+        "GiamGiaTG": 16
+      }
+    ]
+  }

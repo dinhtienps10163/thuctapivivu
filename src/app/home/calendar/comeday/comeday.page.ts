@@ -19,7 +19,7 @@ export class ComeDayPage {
   type: 'string'; // 'string' | 'js-date' | 'moment' | 'time' | 'object'
    optionsRange: CalendarComponentOptions = {
     pickMode: 'range',
-      monthFormat: 'dddd-DD/MM/YYYY',
+     // monthFormat: 'dddd-DD/MM/YYYY',
 
    };
 
@@ -40,8 +40,8 @@ export class ComeDayPage {
     //console.log(ev)
   }
   onChange(event){
-     this.to = moment(event.to).format('dddd-DD/MM/YYYY');
-     this.froms = moment(event.from).format('dddd-DD/MM/YYYY');
+     this.to = moment(event.to).format('DD/MM/YYYY');
+     this.froms = moment(event.from).format('DD/MM/YYYY');
     //console.log(event)
     
   }

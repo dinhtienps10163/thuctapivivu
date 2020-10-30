@@ -1,0 +1,58 @@
+<div>
+<div>
+  <ion-title class="ion-title-toa">Toa 2: giường nằm khoang 4 điều hòa</ion-title>
+</div>
+<div class="right">
+  <ion-title class="title-left">Tầng 1</ion-title>
+  <ion-title class="title-right">Tầng 2</ion-title>
+ 
+<div style="margin-left: 15px; margin-top: -20px;" *ngFor="let item of slGhe">
+  <div>    
+    <ion-title class="title">{{item.id}}</ion-title>
+  </div>
+  <ion-grid >
+    <div style="background-color: #0009; width: 140px; height: 10px; margin-left: -5px; margin-top: -70px; border-radius: 5px;"></div>
+    <ion-row class="ion-row" >
+      <ion-col>
+        <div>
+            <div class="div-background">
+              <div class="div-con">
+              </div>
+              <ion-title class="ion-title" (click)="click(item)">{{item.gheso1}}</ion-title>
+            </div>
+          </div>
+      </ion-col>
+      <ion-col>
+        <div>
+            <div class="div-background">
+              <div class="div-con">
+              </div>
+              <ion-title class="ion-title" (click)="clicks(item)">{{item.gheso3}}</ion-title>
+            </div>
+          </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-row">
+      <ion-col>
+        <div>
+            <div class="div-background">
+              <div class="div-con">
+              </div>
+              <ion-title class="ion-title" (click)="clicka(item)">{{item.gheso2}}</ion-title>
+            </div>
+          </div>
+      </ion-col>
+      <ion-col>
+        <div>
+            <div class="div-background">
+              <div class="div-con">
+              </div>
+              <ion-title class="ion-title" (click)="clickd(item)">{{item.gheso4}}</ion-title>
+            </div>
+          </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+</div>
+</div>

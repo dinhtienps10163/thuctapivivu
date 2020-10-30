@@ -2,13 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { ChooseTripPage } from './choosetrip.page';
 
 //import { ChooseTripPageRoutingModule } from './choosetrip-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { ProviderBooking } from 'src/service/providerBooking';
-import { ProviderChooseSeat } from 'src/service/providerChooseSeat';
+import { NgoiDieuHoaComponent } from './ngoidieuhoa.component';
 
 @NgModule({
   imports: [
@@ -18,12 +16,11 @@ import { ProviderChooseSeat } from 'src/service/providerChooseSeat';
     //ChooseTripPageRoutingModule,
     RouterModule.forChild([
       {path: "", 
-      component: ChooseTripPage}
+      component: NgoiDieuHoaComponent}
     ]),
     HttpClientModule,
   ],
-  declarations: [ChooseTripPage],
-  providers: [ProviderChooseSeat]
+  declarations: [NgoiDieuHoaComponent],
 
 })
-export class ChooseTripPageModule {}
+export class NgoiDieuHoaComponentModule {}

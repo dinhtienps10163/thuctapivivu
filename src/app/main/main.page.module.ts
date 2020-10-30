@@ -6,7 +6,6 @@ import { MainPage } from './main.page';
 
 import { MainPageRoutingModule } from './Main-routing.module';
 import { UserProvider} from '../../service/ultility';
-import { CalendarPage } from '../home/calendar/calendar.page';
 import { SearchGoPage } from '../home/search/searchgo/searchgo.page';
 
 
@@ -18,7 +17,7 @@ import { SearchGoPage } from '../home/search/searchgo/searchgo.page';
     MainPageRoutingModule,
   ],
   declarations: [MainPage],
-  providers:[UserProvider, CalendarPage],
+  providers:[UserProvider],
 
 })
 export class MainPageModule {}

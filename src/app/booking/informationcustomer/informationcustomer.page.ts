@@ -8,7 +8,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['informationcustomer.page.scss'],
 })
 export class InformationCustomerPage {
-
+  isHidden: boolean = false;
   constructor(private router: Router, private NavCtr : NavController) {}
   goback(){
     this.NavCtr.back();

@@ -1,11 +1,110 @@
 {
   "listTau": [
     {
+      "id": 2000,
+      "dmTauVatLyId": 1,
+      "maGaDi": "AHO",
+      "tenGaDi": "An Hòa",
+      "maGaDen": "ATH",
+      "tenGaDen": "Âm Thượng",
+      "gaDiKM": 0,
+      "gaDenKM": 411,
+      "ngayDi": "2020-11-09T23:00:00Z",
+      "ngayDen": "2020-11-10T06:18:00Z",
+      "macTau": "SE8",
+      "gioDi": "06:00:00",
+      "gioDen": "13:18:00",
+      "tongChoCon": 549,
+      "tongChoLock": 0,
+      "ngayXP": "2020-11-09T17:00:00Z",
+      "bangGiaVes": null,
+      "bangGiaVeKeys": null,
+      "toaXes": [
+        {
+          "id": 660,
+          "dmTauVatLyId": 1,
+          "toaNo": 1,
+          "toaSo": "1",
+          "toaSoSX": 10,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "NML"
+          ],
+          "toaXeDienGiai": "Ngồi mềm điều hòa",
+          "nhomChoWeb": "NGM"
+        },
+        {
+          "id": 660,
+          "dmTauVatLyId": 1,
+          "toaNo": 2,
+          "toaSo": "2",
+          "toaSoSX": 20,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "NML"
+          ],
+          "toaXeDienGiai": "Ngồi mềm điều hòa",
+          "nhomChoWeb": "NGM"
+        },
+        {
+          "id": 670,
+          "dmTauVatLyId": 1,
+          "toaNo": 3,
+          "toaSo": "3",
+          "toaSoSX": 30,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "NML"
+          ],
+          "toaXeDienGiai": "Ngồi mềm điều hòa",
+          "nhomChoWeb": "NGM"
+        },
+        {
+          "id": 671,
+          "dmTauVatLyId": 1,
+          "toaNo": 4,
+          "toaSo": "4",
+          "toaSoSX": 40,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "NML"
+          ],
+          "toaXeDienGiai": "Ngồi mềm điều hòa",
+          "nhomChoWeb": "NGM"
+        }
+      ],
+      "dmTauVatLy": null,
+      "ngay": 10,
+      "ngayGioDi": "10/11 06:00",
+      "ngayGioDen": "10/11 13:18"
+    },
+    
+
+
+
+
+    {
       "id": 24280,
       "dmTauVatLyId": 93,
       "maGaDi": "AHO",
       "tenGaDi": "Sài Gòn",
-      "maGaDen": "NTR",
+      "maGaDen": "ATH",
       "tenGaDen": "Nha Trang",
       "gaDiKM": 0,
       "gaDenKM": 411,
@@ -32,10 +131,10 @@
           "choVatLyKeys": null,
           "choPhuKeys": null,
           "listLoaiCho": [
-            "NML"
+            "NCL"
           ],
-          "toaXeDienGiai": "Ngồi mềm điều hòa",
-          "nhomChoWeb": "NGM"
+          "toaXeDienGiai": "Ngồi cứng điều hòa",
+          "nhomChoWeb": "NGC"
         },
         {
           "id": 669,
@@ -49,10 +148,10 @@
           "choVatLyKeys": null,
           "choPhuKeys": null,
           "listLoaiCho": [
-            "NML"
+            "NCL"
           ],
-          "toaXeDienGiai": "Ngồi mềm điều hòa",
-          "nhomChoWeb": "NGM"
+          "toaXeDienGiai": "Ngồi cứng điều hòa",
+          "nhomChoWeb": "NGC"
         },
         {
           "id": 670,
@@ -66,10 +165,10 @@
           "choVatLyKeys": null,
           "choPhuKeys": null,
           "listLoaiCho": [
-            "NML"
+            "NCL"
           ],
-          "toaXeDienGiai": "Ngồi mềm điều hòa",
-          "nhomChoWeb": "NGM"
+          "toaXeDienGiai": "Ngồi cứng điều hòa",
+          "nhomChoWeb": "NGC"
         },
         {
           "id": 671,
@@ -83,10 +182,10 @@
           "choVatLyKeys": null,
           "choPhuKeys": null,
           "listLoaiCho": [
-            "NML"
+            "NCL"
           ],
-          "toaXeDienGiai": "Ngồi mềm điều hòa",
-          "nhomChoWeb": "NGM"
+          "toaXeDienGiai": "Ngồi cứng điều hòa",
+          "nhomChoWeb": "NGC"
         }
       ],
       "dmTauVatLy": null,
@@ -97,108 +196,50 @@
 
 
 
+
+
     
     {
-      "id": 116407,
-      "dmTauVatLyId": 932,
-      "maGaDi": "SGO",
+      "id": 24280,
+      "dmTauVatLyId": 93,
+      "maGaDi": "AHO",
       "tenGaDi": "Sài Gòn",
-      "maGaDen": "NTR",
+      "maGaDen": "ATH",
       "tenGaDen": "Nha Trang",
       "gaDiKM": 0,
       "gaDenKM": 411,
-      "ngayDi": "2020-11-10T06:10:00Z",
-      "ngayDen": "2020-11-10T14:17:00Z",
-      "macTau": "TN2",
-      "gioDi": "13:10:00",
-      "gioDen": "21:17:00",
-      "tongChoCon": 628,
+      "ngayDi": "2020-11-09T23:00:00Z",
+      "ngayDen": "2020-11-10T06:18:00Z",
+      "macTau": "SE8",
+      "gioDi": "06:00:00",
+      "gioDen": "13:18:00",
+      "tongChoCon": 549,
       "tongChoLock": 0,
       "ngayXP": "2020-11-09T17:00:00Z",
       "bangGiaVes": null,
       "bangGiaVeKeys": null,
       "toaXes": [
         {
-          "id": 8601,
-          "dmTauVatLyId": 932,
-          "toaNo": 7,
-          "toaSo": "7",
-          "toaSoSX": 70,
-          "toaXe": "A64L",
-          "toaXeStatus": 1,
-          "toaXeLayout": 4,
-          "choVatLyKeys": null,
-          "choPhuKeys": null,
-          "listLoaiCho": [
-            "NML"
-          ],
-          "toaXeDienGiai": "Ngồi mềm điều hòa",
-          "nhomChoWeb": "NGM"
-        }
-      ],
-      "dmTauVatLy": null,
-      "ngay": 10,
-      "ngayGioDi": "10/11 13:10",
-      "ngayGioDen": "10/11 21:17"
-    },
-    {
-      "id": 5823,
-      "dmTauVatLyId": 31,
-      "maGaDi": "SGO",
-      "tenGaDi": "Sài Gòn",
-      "maGaDen": "NTR",
-      "tenGaDen": "Nha Trang",
-      "gaDiKM": 0,
-      "gaDenKM": 411,
-      "ngayDi": "2020-11-10T15:00:00Z",
-      "ngayDen": "2020-11-10T21:52:00Z",
-      "macTau": "SE4",
-      "gioDi": "22:00:00",
-      "gioDen": "04:52:00",
-      "tongChoCon": 319,
-      "tongChoLock": 0,
-      "ngayXP": "2020-11-09T17:00:00Z",
-      "bangGiaVes": null,
-      "bangGiaVeKeys": null,
-      "toaXes": [
-        {
-          "id": 152,
-          "dmTauVatLyId": 31,
+          "id": 668,
+          "dmTauVatLyId": 93,
           "toaNo": 1,
-          "toaSo": "1A",
-          "toaSoSX": 11,
+          "toaSo": "1",
+          "toaSoSX": 10,
           "toaXe": "A64L",
           "toaXeStatus": 1,
           "toaXeLayout": 4,
           "choVatLyKeys": null,
           "choPhuKeys": null,
           "listLoaiCho": [
-            "NML"
+            "GP"
           ],
-          "toaXeDienGiai": "Ngồi mềm điều hòa",
-          "nhomChoWeb": "NGM"
+          "toaXeDienGiai": "Ghế phụ",
+          "nhomChoWeb": "GP"
         },
         {
-          "id": 149,
-          "dmTauVatLyId": 31,
+          "id": 669,
+          "dmTauVatLyId": 93,
           "toaNo": 2,
-          "toaSo": "1B",
-          "toaSoSX": 12,
-          "toaXe": "A64L",
-          "toaXeStatus": 1,
-          "toaXeLayout": 4,
-          "choVatLyKeys": null,
-          "choPhuKeys": null,
-          "listLoaiCho": [
-            "NML"
-          ],
-          "toaXeDienGiai": "Ngồi mềm điều hòa",
-          "nhomChoWeb": "NGM"
-        },
-        {
-          "id": 150,
-          "dmTauVatLyId": 31,
-          "toaNo": 3,
           "toaSo": "2",
           "toaSoSX": 20,
           "toaXe": "A64L",
@@ -207,32 +248,15 @@
           "choVatLyKeys": null,
           "choPhuKeys": null,
           "listLoaiCho": [
-            "NML"
+            "GP"
           ],
-          "toaXeDienGiai": "Ngồi mềm điều hòa",
-          "nhomChoWeb": "NGM"
+          "toaXeDienGiai": "Ghế phụ",
+          "nhomChoWeb": "GP"
         },
         {
-          "id": 148,
-          "dmTauVatLyId": 31,
-          "toaNo": 4,
-          "toaSo": "2B",
-          "toaSoSX": 22,
-          "toaXe": "A64L",
-          "toaXeStatus": 1,
-          "toaXeLayout": 4,
-          "choVatLyKeys": null,
-          "choPhuKeys": null,
-          "listLoaiCho": [
-            "NML"
-          ],
-          "toaXeDienGiai": "Ngồi mềm điều hòa",
-          "nhomChoWeb": "NGM"
-        },
-        {
-          "id": 151,
-          "dmTauVatLyId": 31,
-          "toaNo": 5,
+          "id": 670,
+          "dmTauVatLyId": 93,
+          "toaNo": 3,
           "toaSo": "3",
           "toaSoSX": 30,
           "toaXe": "A64L",
@@ -241,17 +265,239 @@
           "choVatLyKeys": null,
           "choPhuKeys": null,
           "listLoaiCho": [
-            "NML"
+            "GP"
           ],
-          "toaXeDienGiai": "Ngồi mềm điều hòa",
-          "nhomChoWeb": "NGM"
+          "toaXeDienGiai": "Ghế phụ",
+          "nhomChoWeb": "GP"
+        },
+        {
+          "id": 671,
+          "dmTauVatLyId": 93,
+          "toaNo": 4,
+          "toaSo": "4",
+          "toaSoSX": 40,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "GP"
+          ],
+          "toaXeDienGiai": "Ghế phụ",
+          "nhomChoWeb": "GP"
         }
       ],
       "dmTauVatLy": null,
       "ngay": 10,
-      "ngayGioDi": "10/11 22:00",
-      "ngayGioDen": "11/11 04:52"
+      "ngayGioDi": "10/11 06:00",
+      "ngayGioDen": "10/11 13:18"
+    },
+
+
+
+
+
+
+
+
+
+
+    {
+      "id": 24280,
+      "dmTauVatLyId": 93,
+      "maGaDi": "AHO",
+      "tenGaDi": "Sài Gòn",
+      "maGaDen": "ATH",
+      "tenGaDen": "Nha Trang",
+      "gaDiKM": 0,
+      "gaDenKM": 411,
+      "ngayDi": "2020-11-09T23:00:00Z",
+      "ngayDen": "2020-11-10T06:18:00Z",
+      "macTau": "SE8",
+      "gioDi": "06:00:00",
+      "gioDen": "13:18:00",
+      "tongChoCon": 549,
+      "tongChoLock": 0,
+      "ngayXP": "2020-11-09T17:00:00Z",
+      "bangGiaVes": null,
+      "bangGiaVeKeys": null,
+      "toaXes": [
+        {
+          "id": 668,
+          "dmTauVatLyId": 93,
+          "toaNo": 1,
+          "toaSo": "1",
+          "toaSoSX": 10,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "AnL"
+          ],
+          "toaXeDienGiai": "Nằm khoang 4 điều hòa",
+          "nhomChoWeb": "NAM"
+        },
+        {
+          "id": 669,
+          "dmTauVatLyId": 93,
+          "toaNo": 2,
+          "toaSo": "2",
+          "toaSoSX": 20,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "AnL"
+          ],
+          "toaXeDienGiai": "Nằm khoang 4 điều hòa",
+          "nhomChoWeb": "NAM"
+        },
+        {
+          "id": 670,
+          "dmTauVatLyId": 93,
+          "toaNo": 3,
+          "toaSo": "3",
+          "toaSoSX": 30,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "AnL"
+          ],
+          "toaXeDienGiai": "Nằm khoang 4 điều hòa",
+          "nhomChoWeb": "NAM"
+        },
+        {
+          "id": 671,
+          "dmTauVatLyId": 93,
+          "toaNo": 4,
+          "toaSo": "4",
+          "toaSoSX": 40,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "AnL"
+          ],
+          "toaXeDienGiai": "Nằm khoang 4 điều hòa",
+          "nhomChoWeb": "NAM"
+        }
+      ],
+      "dmTauVatLy": null,
+      "ngay": 10,
+      "ngayGioDi": "10/11 06:00",
+      "ngayGioDen": "10/11 13:18"
+    },
+
+
+
+
+
+
+
+    {
+      "id": 24280,
+      "dmTauVatLyId": 93,
+      "maGaDi": "AHO",
+      "tenGaDi": "Sài Gòn",
+      "maGaDen": "ATH",
+      "tenGaDen": "Nha Trang",
+      "gaDiKM": 0,
+      "gaDenKM": 411,
+      "ngayDi": "2020-11-09T23:00:00Z",
+      "ngayDen": "2020-11-10T06:18:00Z",
+      "macTau": "SE8",
+      "gioDi": "06:00:00",
+      "gioDen": "13:18:00",
+      "tongChoCon": 549,
+      "tongChoLock": 0,
+      "ngayXP": "2020-11-09T17:00:00Z",
+      "bangGiaVes": null,
+      "bangGiaVeKeys": null,
+      "toaXes": [
+        {
+          "id": 668,
+          "dmTauVatLyId": 93,
+          "toaNo": 1,
+          "toaSo": "1",
+          "toaSoSX": 10,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "BnLT1"
+          ],
+          "toaXeDienGiai": "Nằm khoang 6 điều hòa T1",
+          "nhomChoWeb": "NAC"
+        },
+        {
+          "id": 669,
+          "dmTauVatLyId": 93,
+          "toaNo": 2,
+          "toaSo": "2",
+          "toaSoSX": 20,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "BnLT1"
+          ],
+          "toaXeDienGiai": "Nằm khoang 6 điều hòa T1",
+          "nhomChoWeb": "NAC"
+        },
+        {
+          "id": 670,
+          "dmTauVatLyId": 93,
+          "toaNo": 3,
+          "toaSo": "3",
+          "toaSoSX": 30,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "BnLT1"
+          ],
+          "toaXeDienGiai": "Nằm khoang 6 điều hòa T1",
+          "nhomChoWeb": "NAC"
+        },
+        {
+          "id": 671,
+          "dmTauVatLyId": 93,
+          "toaNo": 4,
+          "toaSo": "4",
+          "toaSoSX": 40,
+          "toaXe": "A64L",
+          "toaXeStatus": 1,
+          "toaXeLayout": 4,
+          "choVatLyKeys": null,
+          "choPhuKeys": null,
+          "listLoaiCho": [
+            "BnLT1"
+          ],
+          "toaXeDienGiai": "Nằm khoang 6 điều hòa T1",
+          "nhomChoWeb": "NAC"
+        }
+      ],
+      "dmTauVatLy": null,
+      "ngay": 10,
+      "ngayGioDi": "10/11 06:00",
+      "ngayGioDen": "10/11 13:18"
     }
   ],
-  "bookingCode": "G2FGLW"
+  "bookingCode": null
 }

@@ -97,3 +97,54 @@ export class ToaX{
     toaXeDienGiai: string;
     nhomChoWeb: string;
 }
+
+// đặt chổ
+export class chonCho {
+    ToaXe: ToaXe;
+    Chos: Cho;
+}
+export class ToaXe {
+    id: number;
+    dmTauVatLyId: number;
+    toaNo: number;
+    toaSo: string;
+    toaSoSX: number;
+    toaXe: string;
+    toaXeStatus: number;
+    toaXeLayout: number;
+    choVatLyKeys: string[];
+    choPhuKeys: string[];
+    listLoaiCho: string[];
+    toaXeDienGiai: string;
+    nhomChoWeb: string;
+}
+
+export class Status {
+    status: number;
+    ticketId: number;
+    duration: number;
+    tenGaDi: string;
+    tenGaDen: string;
+    lyDo: string;
+}
+
+export class Cho {
+    id: number;
+    dmToaXeVatLyId: number;
+    dmLoaiChoId: number;
+    choSo: number;
+    loaiCho: string;
+    giaVe: number;
+    ticketId: number;
+    toaXe: string;
+    toaSo: string;
+    toaXeLayout: number;
+    status: Status;
+    veVatLyKeys: string[];
+    nguyenGia: number;
+    tienThu: number;
+    baoHiem: number;
+    giamGiaTG: number;
+}
+
+

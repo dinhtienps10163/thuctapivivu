@@ -4,7 +4,6 @@ import { ModalController, NavController } from '@ionic/angular';
 import { ChooseChairPage } from './choosechair/choosechair.page';
 import { ModalPage } from './choosenumber/modal';
 import { UserProvider } from '../../service/ultility';
-import { CalendarPage } from './calendar/calendar.page';
 import { SearchGoPage } from './search/searchgo/searchgo.page';
 import { SearchComePage } from './search/searchcome/searchcome.page';
 import { GoDayPage } from './calendar/goday/goday.page';
@@ -39,7 +38,6 @@ export class HomePage implements OnInit {
   data
   constructor(
     private router: Router,
-    public calendar: CalendarPage,
     private modalController: ModalController, 
     public _userProvider: UserProvider,
     public _providerBooking: ProviderBooking,
@@ -53,7 +51,7 @@ export class HomePage implements OnInit {
       if (data) {
         this.nhomCho = this._userProvider.listNhomCho;
         this.GaBacNamDi = this._userProvider.listGaBacNam;
-        this.khachHang = this._userProvider.listAmountKH + ' ' + this._userProvider.listDoiTuongKH;
+        this.khachHang =  this._userProvider.listDoiTuongKH;
         this.GaBacNamDen = this._userProvider.listGaBacNamden;
         this.dayGo = this._userProvider.titlego;
         this.dayCome = this._userProvider.titleCome;
@@ -64,9 +62,10 @@ export class HomePage implements OnInit {
         this.loaiCho = this._userProvider.loaiCho;
         //console.log(this._userProvider)
       }
-    })
+    });
+    
   }
-
+  
   gobooking() {
     // this.navCtrl.navigateForward('choosetrip');
     this.router.navigate(['choosetrip']);
@@ -74,15 +73,12 @@ export class HomePage implements OnInit {
     this._providerBooking.maGaDen = this.maGaDen
     this._providerBooking.ngayDi = this.dayGo
     this._providerBooking.loaiCho = this.loaiCho
-    this._providerBooking.itemChange.emit(1);
 
-    //this.router.navigate(['choosetrip'])
-    // this._userProvider
-    // this.GaBacNamDen
-    // this.dayGo
-    // this.dayCome
-    // this.nhomCho
-    // this.khachHang
+    this._providerBooking.dayGo = this.dayGo; 
+    this._providerBooking.dayCome = this.dayCome;
+    this._providerBooking.gaGo = this.GaBacNamDi;
+    this._providerBooking.gaCome = this.GaBacNamDen;
+    this._providerBooking.itemChange.emit(1);
 
   }
   selectedMovie() {
@@ -94,10 +90,7 @@ export class HomePage implements OnInit {
       cssClass: 'my-modal-component-cssss'
     })
     await modal.present();
-    // const event: any = modal.onDidDismiss();
-    // console.log(event);
-    // this.khachHang = this._userProvider.listDoiTuongKH;
-    //   console.log(this.khachHang)
+    
   }
   async _openModalSearchGo() {
     const modal = await this.modalController.create({
@@ -105,10 +98,7 @@ export class HomePage implements OnInit {
       cssClass: 'my-modal-component-cssss'
     })
     await modal.present();
-    // const event: any = modal.onDidDismiss();
-    // console.log(event);
-    //this._userProvider.listGaBacNam = this.GaBacNamDi;
-    //this._userProvider.itemGaChange.emit(1);
+    
   }
 
   async _openModalCalendarcome() {
@@ -141,8 +131,7 @@ export class HomePage implements OnInit {
       cssClass: 'my-modal-choosenumber-css'
     })
     await modal.present();
-    // const event: any = modal.onDidDismiss();
-    // console.log(event);
+    
     this._userProvider.listAmountKH = this.khachHang;
     this._userProvider.itemGaChange.emit(1);
   }
@@ -153,12 +142,7 @@ export class HomePage implements OnInit {
       cssClass: 'my-modal-choosechair-css',
     })
     await modal.present();
-    // const event:any = modal.onDidDismiss();
-    // console.log(event);
-    // this.nhomCho = this._userProvider.listNhomCho;
-    //this._userProvider.listNhomCho = this.nhomCho;
-    //this._userProvider.itemselected = this.nhomCho
-    //this._userProvider.itemGaChange.emit(1);
+   
    
   }
 }

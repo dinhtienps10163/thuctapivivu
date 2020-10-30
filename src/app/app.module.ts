@@ -18,8 +18,10 @@ import { ModalPage } from './home/choosenumber/modal';
 import { HomePage } from './home/home.page';
 import { UserProvider } from 'src/service/ultility';
 import { CalendarModule } from 'ion2-calendar';
+import { ProviderChooseSeat } from 'src/service/providerChooseSeat';
+import { ProviderBooking } from 'src/service/providerBooking';
 @NgModule({
-  declarations: [AppComponent , ChooseChairPage, ModalPage, HomePage, ],
+  declarations: [AppComponent , ChooseChairPage, ModalPage, HomePage],
   entryComponents: [],
   imports: [ 
     MbscModule, BrowserModule, 
@@ -30,8 +32,9 @@ import { CalendarModule } from 'ion2-calendar';
   providers: [
     StatusBar,
     SplashScreen,
-   // GetDataTimKiemTau,
-   UserProvider,
+    ProviderChooseSeat,
+    ProviderBooking,
+    UserProvider,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {provide: LOCALE_ID, useValue:"vi"}
   ],

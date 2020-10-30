@@ -12,6 +12,12 @@ import { UserProvider } from 'src/service/ultility';
 })
 export class SearchComePage {
 
+  // slideOpts = {
+  //   initialSlide: 0,
+  //   speed: 400,
+  //   slidesPerView: 1.2,
+  // };
+
   public listGaBacNam: listGaBacNam[] = [];
   public GaBacNam;
   public maGa;

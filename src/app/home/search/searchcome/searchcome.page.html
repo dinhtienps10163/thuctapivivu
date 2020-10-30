@@ -23,7 +23,7 @@
     <div class="div-list">
     <div style="margin-top: 20px; background-color: white; width: 100%">
       <ion-item class="ion-item">
-        <ion-label class="ion-label-search">Tìm kiếm phổ biến</ion-label>
+        <ion-label class="ion-label-search">Tìm kiếm ga đến</ion-label>
       </ion-item>
       <!-- <ion-item class="item-locate">
         <ion-label class="label-locate">Vị trí của bạn</ion-label>
@@ -31,12 +31,14 @@
       </ion-item> -->
     </div>
 
-    <div class="div-search-popular">
-      <br/>
-      <ion-title class="label-address">Ga Hà Nội</ion-title>
-      <br />
-      <ion-title class="ion-label">Hà Nội</ion-title>
-    </div>
+    <!-- <div class="div-search-popular"  *ngFor="let GaBacNam of listGaBacNam">
+      <ion-slides pager="true" [options]="slideOpts" style="background-color: #ecf0f5;  ">
+        <ion-slide>
+          <ion-title class="label-address">{{GaBacNam.tenGa}}</ion-title>
+          <ion-title class="ion-label">{{GaBacNam.sKeys}}</ion-title>
+        </ion-slide>
+      </ion-slides>
+    </div> -->
     <div (click)="clickitem(GaBacNam)" *ngFor="let GaBacNam of listGaBacNam" 
       
     >

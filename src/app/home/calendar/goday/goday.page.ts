@@ -44,7 +44,7 @@ export class GoDayPage {
     //console.log(ev)
   }
   onChange(event){
-    this.from = moment(event).format('dddd-DD/MM/YYYY');
+    this.from = moment(event).format('DD/MM/YYYY');
   }
   clickcheckbox(event) {
     if(this.ischeckbox == true){

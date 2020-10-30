@@ -1,0 +1,73 @@
+<div>
+  <div>
+    <ion-title class="ion-title-toa"
+      >Toa 3: giường nằm khoang 6 điều hòa</ion-title
+    >
+  </div>
+  <div style="margin-left: 30%; margin-top: 20px;">
+    <ion-title class="title-left">Tầng 1</ion-title>
+    <ion-title class="title-center">Tầng 2</ion-title>
+    <ion-title class="title-right">Tầng 3</ion-title>
+  </div>
+  
+  <div class="right">
+    <div style="margin-left: 10px; margin-top: 10px" *ngFor="let item of slGhe">
+      <ion-title class="title">{{ item.id }}</ion-title>
+      <ion-grid>
+        <div class="div-horizontal"></div>
+        <ion-row class="ion-row">
+          <ion-col>
+            <div>
+              <div class="div-background">
+                <div class="div-con"></div>
+                <ion-title class="ion-title">{{item.gheso1}}</ion-title>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <div class="div-background">
+                <div class="div-con"></div>
+                <ion-title class="ion-title">{{item.gheso3}}</ion-title>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <div class="div-background">
+                <div class="div-con"></div>
+                <ion-title class="ion-title">{{item.gheso5}}</ion-title>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-row">
+          <ion-col>
+            <div>
+              <div class="div-background">
+                <div class="div-con"></div>
+                <ion-title class="ion-title">{{item.gheso2}}</ion-title>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <div class="div-background">
+                <div class="div-con"></div>
+                <ion-title class="ion-title">{{item.gheso4}}</ion-title>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <div class="div-background">
+                <div class="div-con"></div>
+                <ion-title class="ion-title">{{item.gheso6}}</ion-title>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</div>
