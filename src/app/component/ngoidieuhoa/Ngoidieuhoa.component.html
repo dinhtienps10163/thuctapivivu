@@ -4,16 +4,16 @@
 </div>
 <div>
   <ion-grid>
-    <ion-row class="ion-row">
+    <ion-row class="ion-row" *ngFor="let item of slGhe">
       <ion-col>
         <div>
             <div>
           <div class="view"></div>
           <div class="content"></div>
         </div>
-          <div class="top">
+          <div class="top" (click)="click(item)">
             <ion-icon class="iconghe" name="square-outline"></ion-icon>
-            <ion-title class="title">4</ion-title>
+            <ion-title class="title">{{item.gheso4}}</ion-title>
           </div>
         </div>
       </ion-col>
@@ -25,7 +25,7 @@
         </div>
           <div class="top">
             <ion-icon class="iconghe" name="square-outline"></ion-icon>
-            <ion-title class="title">3</ion-title>
+            <ion-title class="title">{{item.gheso3}}</ion-title>
           </div>
         </div>
       </ion-col>
@@ -37,7 +37,7 @@
         </div>
           <div class="top">
             <ion-icon class="iconghe" name="square-outline"></ion-icon>
-            <ion-title class="title">2</ion-title>
+            <ion-title class="title">{{item.gheso2}}</ion-title>
           </div>
         </div>
       </ion-col>
@@ -49,371 +49,14 @@
         </div>
           <div class="top">
             <ion-icon class="iconghe" name="square-outline"></ion-icon>
-            <ion-title class="title">1</ion-title>
+            <ion-title class="title">{{item.gheso1}}</ion-title>
           </div>
         </div>
       </ion-col>
     </ion-row>
-
-    <ion-row class="ion-row">
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">5</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col class="left">
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">6</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">7</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">8</ion-title>
-            </div>
-          </div>
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="ion-row">
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">12</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col class="left">
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">11</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">10</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">9</ion-title>
-            </div>
-          </div>
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="ion-row">
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">13</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col class="left">
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">14</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">15</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">16</ion-title>
-            </div>
-          </div>
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="ion-row">
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">20</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col class="left">
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">19</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">18</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">17</ion-title>
-            </div>
-          </div>
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="ion-row">
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">21</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col class="left">
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">22</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">23</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">24</ion-title>
-            </div>
-          </div>
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="ion-row">
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">28</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col class="left">
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">27</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">26</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">25</ion-title>
-            </div>
-          </div>
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="ion-row">
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">29</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col class="left">
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">30</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">31</ion-title>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-              <div>
-            <div class="view"></div>
-            <div class="content"></div>
-          </div>
-            <div class="top">
-              <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">32</ion-title>
-            </div>
-          </div>
-        </ion-col>
-      </ion-row>
       <div style="background-color: #0009; width: 40%; height: 20px; margin-left: 8px; margin-top: 20px; border-radius: 5px;"></div>
       <div style="background-color: #0009; width: 40%; height: 20px; margin-left: 55%; margin-top: -20px; border-radius: 5px;"></div>
-      <ion-row class="ion-row">
+      <ion-row class="ion-row" *ngFor="let item of slGhe">
         <ion-col>
           <div>
               <div>
@@ -422,7 +65,7 @@
           </div>
             <div class="top">
               <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">36</ion-title>
+              <ion-title class="title">{{item.gheso4}}</ion-title>
             </div>
           </div>
         </ion-col>
@@ -434,7 +77,7 @@
           </div>
             <div class="top">
               <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">35</ion-title>
+              <ion-title class="title">{{item.gheso3}}</ion-title>
             </div>
           </div>
         </ion-col>
@@ -446,7 +89,7 @@
           </div>
             <div class="top">
               <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">34</ion-title>
+              <ion-title class="title">{{item.gheso2}}</ion-title>
             </div>
           </div>
         </ion-col>
@@ -458,368 +101,11 @@
           </div>
             <div class="top">
               <ion-icon class="iconghe" name="square-outline"></ion-icon>
-              <ion-title class="title">33</ion-title>
+              <ion-title class="title">{{item.gheso1}}</ion-title>
             </div>
           </div>
         </ion-col>
       </ion-row>
-  
-      <ion-row class="ion-row">
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">37</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col class="left">
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">38</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">39</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">40</ion-title>
-              </div>
-            </div>
-          </ion-col>
-        </ion-row>
-  
-        <ion-row class="ion-row">
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">44</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col class="left">
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">43</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">42</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">41</ion-title>
-              </div>
-            </div>
-          </ion-col>
-        </ion-row>
-  
-        <ion-row class="ion-row">
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">45</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col class="left">
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">46</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">47</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">48</ion-title>
-              </div>
-            </div>
-          </ion-col>
-        </ion-row>
-  
-        <ion-row class="ion-row">
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">52</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col class="left">
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">51</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">50</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">49</ion-title>
-              </div>
-            </div>
-          </ion-col>
-        </ion-row>
-  
-        <ion-row class="ion-row">
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">53</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col class="left">
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">54</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">55</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">56</ion-title>
-              </div>
-            </div>
-          </ion-col>
-        </ion-row>
-  
-        <ion-row class="ion-row">
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">60</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col class="left">
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">59</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">58</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">57</ion-title>
-              </div>
-            </div>
-          </ion-col>
-        </ion-row>
-  
-        <ion-row class="ion-row">
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">61</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col class="left">
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">62</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">63</ion-title>
-              </div>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-                <div>
-              <div class="view"></div>
-              <div class="content"></div>
-            </div>
-              <div class="top">
-                <ion-icon class="iconghe" name="square-outline"></ion-icon>
-                <ion-title class="title">64</ion-title>
-              </div>
-            </div>
-          </ion-col>
-        </ion-row>
-  </ion-grid>
+    </ion-grid>
 </div>
 </div>

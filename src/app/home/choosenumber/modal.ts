@@ -1,12 +1,10 @@
-import { state } from '@angular/animations';
 import { Component, NgZone } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ModalController, NavController } from '@ionic/angular';
-import { sum } from 'angular-pipes/utils/utils';
-import { listGaBacNam, listDoiTuongKH } from '../../../service/model';
+import { ModalController } from '@ionic/angular';
+import { Doituongkhachhang } from 'src/service/modelBooking';
+import { ProviderBooking } from 'src/service/providerBooking';
+import { listDoiTuongKH } from '../../../service/modeldanhmuc';
 import { service } from '../../../service/service';
-import { UserProvider } from '../../../service/ultility';
+import { UserProvider } from '../../../service/userprovider';
 
 @Component({
   selector: 'app-modal',
@@ -15,60 +13,65 @@ import { UserProvider } from '../../../service/ultility';
 })
 export class ModalPage {
   public listDoiTuongKH: listDoiTuongKH[]
- // public amount = 0;
   public tenPTOnline;
-  public amount;
-  public soluong;
+  public sl;
+  public doituong: any = [];
   isDisableleft: boolean = true
   isDisableright: boolean = false
-  constructor(private zone: NgZone , private modalController: ModalController, private _service: service,
-    public _userProvider: UserProvider) { 
-    }
+  data: Doituongkhachhang[] = [];
+  constructor(
+    private zone: NgZone,
+    private modalController: ModalController,
+    private _service: service,
+    public _userProvider: UserProvider,
+    public _providerBooking: ProviderBooking) { }
 
   ngOnInit() {
     this._service.getcomments().subscribe(
       data => {
-        
         this.listDoiTuongKH = data.listDoiTuongKH;
         //console.log(this.listDoiTuongKH)
       })
+    this._userProvider.itemGaChange.pipe().subscribe((data) => {
+      if (data) {
+        this.tenPTOnline = this._userProvider.listDoiTuongKH;
+      }
+    })
 
-      this._userProvider.itemGaChange.pipe().subscribe((data) => {
-        if (data) {
-          this.tenPTOnline = this._userProvider.listDoiTuongKH;
-        }
-      })
-      
   }
-  clickitem() {
+  confirm() {
     this.modalController.dismiss();
-    //this._userProvider.listDoiTuongKH = this.tenPTOnline
-    //this._userProvider.listDoiTuongKH = this.amount
-    //this._userProvider.itemGaChange.emit(1);
+    this._providerBooking.sltoithieu = this.sl;
+    this._providerBooking.doituongs = this.data
   }
   dismiss() {
     this.modalController.dismiss()
   }
   clickplus(item) {
-    var listarr = this.listDoiTuongKH.map((item) => {return item.amount})
-    let count = listarr.reduce((c, total:any) => {return total += c});
-     // console.log(listname);
-      
-      
+    var listarr = this.listDoiTuongKH.map((item) => { return item.amount })
+    let count = listarr.reduce((c, total: any) => { return total += c });
+    this.sl = count;
+    if (item.amount > 0 && item.amount < 2) {
+      this.data.push(item.tenPTOnline)
+    }else if (item.amount > 2 && item.amount < 4) {
+      this.data.push(item.tenPTOnline)
+    }else if (item.amount > 1 && item.amount < 3) {
+      this.data.push(item.tenPTOnline)
+    }else if(item.amount < 1){
+      this.data.push(item.tenPTOnline)
+    };
+        //this.tenPTOnline = item.tenPTOnline
     this.zone.run(() => {
-      item.amount ++
-    })
-    if(listarr){
-      var listname = this.listDoiTuongKH.map((item) => {return item.amount > 0 ? (" " + item.amount + " " +item.tenPTOnline) : ''})
+      item.amount++
+    });
+    if (listarr) {
+      var listname = this.listDoiTuongKH.map((item) => { return item.amount > 0 ? (" " + item.amount + " " + item.tenPTOnline) : '' })
       this.tenPTOnline = listname
       this._userProvider.listDoiTuongKH = this.tenPTOnline;
-      //this.amount = item.amount;
-      //this._userProvider.listAmountKH = this.amount;
-      //item.amount = this._userProvider.listAmountKH;
       this._userProvider.itemGaChange.emit(1);
-    }
-     
-    if(count == 4){
+    };
+
+    if (count == 4) {
       this.isDisableright = true
       return;
     }
@@ -82,22 +85,30 @@ export class ModalPage {
     else {
       this.isDisableright = false
     }
-
   }
   clickminus(item) {
-    
-    var listarr = this.listDoiTuongKH.map((item) => {return item.amount})
-    let count = listarr.reduce((c, total:any) => {return total += c});
-    //item.amount = null
-  this.zone.run(() => {
-    item.amount --
-  })
-  this.tenPTOnline = item.tenPTOnline
-  this._userProvider.listDoiTuongKH = this.tenPTOnline;
-  this.amount = item.amount;
-  this._userProvider.listAmountKH = this.amount;
-  this._userProvider.itemGaChange.emit(1);
-  //item.amount = this._userProvider.listAmountKH;
+
+    var listarr = this.listDoiTuongKH.map((item) => { return item.amount })
+    let count = listarr.reduce((c, total: any) => { return total += c });
+    this.sl = count;
+    if (item.amount > 0 && item.amount < 2) {
+      this.data.push(item.tenPTOnline)
+    }else if (item.amount > 2 && item.amount < 4) {
+      this.data.push(item.tenPTOnline)
+    }else if (item.amount > 1 && item.amount < 3) {
+      this.data.push(item.tenPTOnline)
+    }else if(item.amount < 1){
+      this.data.push(item.tenPTOnline)
+    };
+    this.zone.run(() => {
+      item.amount--
+    });
+    if (listarr) {
+      var listname = this.listDoiTuongKH.map((item) => { return item.amount > 0 ? (" " + item.amount + " " + item.tenPTOnline) : '' })
+      this.tenPTOnline = listname
+      this._userProvider.listDoiTuongKH = this.tenPTOnline;
+      this._userProvider.itemGaChange.emit(1);
+    };
 
     if (count == 0) {
       this.isDisableleft = true

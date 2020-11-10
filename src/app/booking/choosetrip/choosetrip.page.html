@@ -33,11 +33,11 @@
       <ion-title class="title-time-run">Thời gian chạy</ion-title>
     </ion-item>
   </div>
-  <div class="div-item" (click)="onClick(item)" *ngFor="let item of listTau" >
+  <div class="div-item" (click)="onClick(item)" *ngFor="let item of ListTau" >
     <ion-item>
-      <ion-title class="title-time">{{item.gioDi}} - {{item.gioDen}}</ion-title>
+      <ion-title class="title-time">{{item.GioDi}} - {{item.GioDen}}</ion-title>
       <small class="small-time">(33h54')</small>
-      <ion-title class="title-train">{{item.macTau}}</ion-title>
+      <ion-title class="title-train">{{item.MacTau}}</ion-title>
     </ion-item>
   </div>
 </ion-content>

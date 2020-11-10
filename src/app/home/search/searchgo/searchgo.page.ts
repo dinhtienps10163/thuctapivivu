@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
-import { UserProvider } from 'src/service/ultility';
-import { listGaBacNam, listLoaiCho } from '../../../../service/model';
+import { UserProvider } from 'src/service/userprovider';
+import { listGaBacNam, listLoaiCho } from '../../../../service/modeldanhmuc';
 import { service } from '../../../../service/service';
 
 @Component({
@@ -21,7 +21,7 @@ export class SearchGoPage {
   public listGaBacNam: listGaBacNam[] = [];
   public listLoaiCho: listLoaiCho[] = [];
   public GaBacNam;
-  public MaGa;
+  public maGaDi;
   constructor(private router: Router, private modalController: ModalController, private NavCtr: NavController, private _service: service, public _userProvider: UserProvider,) { }
   ngOnInit() {
     this.getdata();
@@ -35,7 +35,6 @@ export class SearchGoPage {
           this.listGaBacNam.forEach((item)=>{ item.selected = item.tenGa == this._userProvider.gaBacNamSelected.tenGa})
           this.selecteditem = this._userProvider.gaBacNamSelected;
 
-          console.log(data.listLoaiCho)
         }
       });
       //nhận dữ liệu từ home.page
@@ -63,11 +62,11 @@ export class SearchGoPage {
     this.selecteditem = GaBacNam
     this._userProvider.gaBacNamSelected = this.selecteditem
     //console.log(GaBacNam)
-    this.GaBacNam = GaBacNam.tenGa
-    
-    this.MaGa = GaBacNam.maGa
-    this._userProvider.maGaDi = this.MaGa
-    this._userProvider.listGaBacNam = this.GaBacNam;
+    this.GaBacNam = GaBacNam.tenGa;
+    this._userProvider.tenGaDi = this.GaBacNam;
+
+    this.maGaDi = GaBacNam.maGa;
+    this._userProvider.listGaBacNam = this.maGaDi;
     this._userProvider.itemGaChange.emit(1);
     this.modalController.dismiss()
   }

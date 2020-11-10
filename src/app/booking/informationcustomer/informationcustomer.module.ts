@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { InformationCustomerPage } from './informationcustomer.page';
 
 import { InformationCustomerPageRoutingModule } from './informationcustomer-routing.module';
+import { Firebase } from '@ionic-native/firebase';
 
 
 @NgModule({
@@ -12,8 +13,10 @@ import { InformationCustomerPageRoutingModule } from './informationcustomer-rout
     CommonModule,
     FormsModule,
     IonicModule,
-    InformationCustomerPageRoutingModule
+    InformationCustomerPageRoutingModule,
   ],
-  declarations: [InformationCustomerPage]
+  declarations: [InformationCustomerPage],
+
+
 })
 export class InformationCustomerPageModule {}

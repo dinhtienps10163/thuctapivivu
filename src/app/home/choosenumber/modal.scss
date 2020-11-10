@@ -1,9 +1,15 @@
+.background-center{
+    background-color: blue;
+     
+}
 .icon{
     font-size: 25px;
 }
 .title-header{
     font-size: 18px;
     text-align: center;
+    color: white;
+    font-weight: bold;
 }
 .title{
     font-size: 14px;
@@ -20,11 +26,13 @@
     font-size: 15px;
 }
 .ion-item{
-    --background: var(--ion-background-color, #fff);
+    //--background: var(--ion-background-color, #fff);
+    //--color: var(--ion-toolbar-color, var(--ion-text-color, blue));
     height: 75px;
 }
 .ion-items{
-    --background: var(--ion-background-color, #fff);
+    //--background: var(--ion-background-color, #fff);
+    --color: var(--ion-toolbar-color, var(--ion-text-color, blue));
     height: 75px;
 }
 .ion-button{

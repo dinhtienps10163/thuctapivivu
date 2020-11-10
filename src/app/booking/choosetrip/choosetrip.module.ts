@@ -8,7 +8,7 @@ import { ChooseTripPage } from './choosetrip.page';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ProviderBooking } from 'src/service/providerBooking';
-import { ProviderChooseSeat } from 'src/service/providerChooseSeat';
+import { ChooseSeatPage } from '../chooseseat/chooseseat.page';
 
 @NgModule({
   imports: [
@@ -22,8 +22,7 @@ import { ProviderChooseSeat } from 'src/service/providerChooseSeat';
     ]),
     HttpClientModule,
   ],
-  declarations: [ChooseTripPage],
-  providers: [ProviderChooseSeat]
+  declarations: [ChooseTripPage, ChooseSeatPage],
 
 })
 export class ChooseTripPageModule {}

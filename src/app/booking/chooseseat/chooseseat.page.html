@@ -7,29 +7,43 @@
         name="arrow-back-outline"
       ></ion-icon>
       <ion-title class="title-header">Chọn chỗ ngồi</ion-title>
-     
     </ion-item>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-content">
   <div class="div-left">
     <ion-grid>
-      <ion-row *ngFor="let item of data">
-          <div style="margin-top: 40px">
-            <div class="border" (click)="clicktoa(item)">
-              <ion-title style="color: #000; font-size: 16px; margin-top: 40px;"
-              >{{item.id}}</ion-title
+      <ion-row *ngFor="let item of toax"  >
+        <div style="margin-top: 40px">
+          <div class="border" (click)="clicktoa(item)"  >
+            <ion-title style="color: #000; font-size: 16px; margin-top: 40px"
+              >{{item.ToaNo}}</ion-title
             >
-            </div>
-            
           </div>
+        </div>
       </ion-row>
     </ion-grid>
   </div>
   <div class="div-right">
-    <div *ngFor="let item of chos">
-      <ion-title>{{item.ChoSo}}</ion-title>
-    </div>
+    <ion-grid *ngIf="isShow">
+      <ion-row>
+        <ion-col class="ion-row" *ngFor="let item of choChinh" >
+          <div (click)="clickitem(item)">
+            <div>
+              <div class="view"></div>
+              <div class="content"></div>
+            </div>
+            <div class="top" >
+              <ion-icon class="iconghe" name="square-outline"></ion-icon>
+              <ion-title class="title">{{item.ChoSo}}</ion-title>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- <app-ngoidieuhoa></app-ngoidieuhoa>
+    <component-khoang4></component-khoang4>
+    <component-khoang6></component-khoang6> -->
   </div>
   <div class="div-bottom">
     <ion-item class="ion-item">
@@ -45,7 +59,7 @@
 <ion-footer>
   <ion-item>
     <ion-title class="sum-price">Tổng tiền</ion-title>
-    <ion-title class="price">0đ</ion-title>
+    <ion-title class="price">{{giaVe}}đ</ion-title>
   </ion-item>
   <ion-button class="ion-button" (click)="onClick()">Tiếp tục</ion-button>
 </ion-footer>

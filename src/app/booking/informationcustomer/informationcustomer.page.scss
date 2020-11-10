@@ -3,6 +3,9 @@
     background-color: blue;
     
 }
+.ion-item{
+    --color: var(--ion-toolbar-color, var(--ion-text-color, blue));
+}
 .title-header{
     text-align: center;
     color: white;
@@ -13,7 +16,29 @@
     color: white;
 }
 .ion-content{
+    //--background: var(--ion-background-color, #ecf0f5);
+}
+.item-border-block{
+    --border-color: var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgb(255, 255, 255))));
+    //--background: var(--ion-background-color, #ecf0f5);
+}
+.item-border{
+    --border-color: var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgb(255, 255, 255))));
     --background: var(--ion-background-color, #ecf0f5);
 }
-
-
+.border{
+    --border-color: var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgb(255, 255, 255))));
+    border-radius: 8px;
+    border: 1px solid #a7a7a7;
+}
+.div-border{
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 90%;
+    border-radius: 8px;
+    border: 1px solid #a7a7a7;
+    box-shadow: 2px 2px 0px white;
+}
+.title-option{
+    font-size: 16px;
+}

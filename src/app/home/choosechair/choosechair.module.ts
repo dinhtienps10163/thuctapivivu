@@ -8,7 +8,7 @@ import { ChooseChairPageRoutingModule } from './choosechair-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 import { service } from '../../../service/service';
 import { HomePage } from '../home.page';
-import { UserProvider} from '../../../service/ultility';
+import { UserProvider} from '../../../service/userprovider';
 
 
 @NgModule({

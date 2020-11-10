@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
-import { listGaBacNam } from 'src/service/model';
+import { listGaBacNam } from 'src/service/modeldanhmuc';
 import { service } from 'src/service/service';
-import { UserProvider } from 'src/service/ultility';
+import { UserProvider } from 'src/service/userprovider';
 
 @Component({
   selector: 'app-searchcome',
@@ -61,10 +61,10 @@ export class SearchComePage {
     this._userProvider.gaBacNamSelectedcome = this.selecteditem
     //console.log(GaBacNam)
     this.GaBacNam = GaBacNam.tenGa
-    this._userProvider.listGaBacNamden = this.GaBacNam;
+    this._userProvider.tenGaDen= this.GaBacNam;
 
     this.maGa = GaBacNam.maGa
-    this._userProvider.maGaDen = this.maGa
+    this._userProvider.listGaBacNamden = this.maGa
     this._userProvider.itemGaChange.emit(1);
     this.modalController.dismiss()
   }

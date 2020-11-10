@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ComeDayPage } from './comeday.page';
 
 import { ComeDayPageRoutingModule } from './comeday-routing.module';
-import { UserProvider } from 'src/service/ultility';
+import { UserProvider } from 'src/service/userprovider';
 import { CalendarModule } from 'ion2-calendar';
 import { NgCalendarModule } from 'ionic2-calendar';
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { observable, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { list, ListTau, RootObject } from './model';
+import { list } from './modeldanhmuc';
 @Injectable({
     providedIn: 'root'
 })

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
-import { UserProvider } from '../../../../service/ultility';
+import { UserProvider } from '../../../../service/userprovider';
 import * as moment from 'moment';
 import { CalendarComponentOptions, CalendarResult } from 'ion2-calendar';
 

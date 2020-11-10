@@ -3,6 +3,9 @@
     background-color: blue;
     
 }
+.ion-item{
+    --color: var(--ion-toolbar-color, var(--ion-text-color, blue));
+}
 .title-header{
     text-align: center;
     color: white;

@@ -6,6 +6,8 @@
 .ion-item{
     // --border: var(ion-color-none);
     // border-color: var(--ion-color-none);
+    --color: var(--ion-toolbar-color, var(--ion-text-color, #3880ff));
+
 }
 .ion-search{
     width: 90%;
@@ -21,7 +23,7 @@
     margin-left: 20px;
 }
 .background-center{
-   background-color: blue;
+   background-color: #3880ff;
     
 }
 .ion-content{

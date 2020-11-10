@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
-import { listGaBacNam, listNhomCho } from '../../../service/model';
+import { ProviderBooking } from 'src/service/providerBooking';
+import { listGaBacNam, listNhomCho } from '../../../service/modeldanhmuc';
 import { service } from '../../../service/service';
-import { UserProvider } from '../../../service/ultility';
+import { UserProvider } from '../../../service/userprovider';
 
 @Component({
   selector: 'app-choosechair',
@@ -14,7 +15,8 @@ export class ChooseChairPage {
   public listNhomCho: listNhomCho[] = [];
   public name;
   public code;
-  public itemselected :any = {name: '',code: ''};
+ 
+ // public itemselected :any = {name: '',code: ''};
   constructor(private modalController: ModalController, private _service: service, 
     public _userProvider: UserProvider) { }
     
@@ -39,19 +41,22 @@ export class ChooseChairPage {
         }
       })
       // this.itemselected === this.selectedItem
+
+      
   }
   selectedItem: listNhomCho;
   clickitem(nhomCho: listNhomCho){
     //console.log(nhomCho)
     //set selecteditem
     this.selectedItem = nhomCho
+    this._userProvider.nhonChoselected = this.selectedItem
     //đẩy dữ liệu
     this.name = nhomCho.name;
-    this._userProvider.listNhomCho = this.name;
-    this._userProvider.nhonChoselected = this.selectedItem
+    this._userProvider.name = this.name;
+    
 
     this.code = nhomCho.code
-    this._userProvider.loaiCho = this.code
+    this._userProvider.listNhomCho = this.code
     this._userProvider.itemGaChange.emit(1);
     //đóng modal
     this.modalController.dismiss()

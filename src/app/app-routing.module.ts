@@ -48,21 +48,14 @@ const routes: Routes = [
     path: 'informationcustomer',
     loadChildren: () => import('./booking/informationcustomer/informationcustomer.module').then(m => m.InformationCustomerPageModule)
   },
-   {
-    path: 'ghephu',
-    loadChildren: () => import('./component/ghephu/ghephu.component.module').then(m => m.GhePhuComponentModule)
+  
+  {
+    path: 'informationbooking',
+    loadChildren: () => import('./booking/informationbooking/informationbooking.module').then(m => m.InformationBookingPageModule)
   },
   {
-    path: 'ngoidieuhoa',
-    loadChildren: () => import('./component/ngoidieuhoa/ngoidieuhoa.component.module').then(m => m.NgoiDieuHoaComponentModule)
-  },
-  {
-    path: 'khoang4',
-    loadChildren: () => import('./component/khoang4/khoang4.component.module').then(m => m.Khoang4ComponentModule)
-  },
-  {
-    path: 'khoang6',
-    loadChildren: () => import('./component/khoang6/khoang6.component.module').then(m => m.Khoang6ComponentModule)
+    path: 'payticket',
+    loadChildren: () => import('./booking/payticket/payticket.module').then(m => m.PayTicketPageModule)
   },
   {
     path: '',

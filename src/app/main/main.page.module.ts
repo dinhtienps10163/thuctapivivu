@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MainPage } from './main.page';
 
 import { MainPageRoutingModule } from './Main-routing.module';
-import { UserProvider} from '../../service/ultility';
+import { UserProvider} from '../../service/userprovider';
 import { SearchGoPage } from '../home/search/searchgo/searchgo.page';
 
 

@@ -19,6 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ChooseSeatPageRoutingModule
   ],
-  declarations: [ChooseSeatPage, NgoiDieuHoaComponent, Khoang4Component, ToaXeComponent, Khoang6Component]
+  declarations: [ChooseSeatPage, NgoiDieuHoaComponent, Khoang4Component, ToaXeComponent, Khoang6Component],
 })
 export class ChooseSeatPageModule {}

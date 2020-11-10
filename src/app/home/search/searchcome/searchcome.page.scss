@@ -6,6 +6,8 @@
 .ion-item{
     // --border: var(ion-color-none);
     // border-color: var(--ion-color-none);
+    --color: var(--ion-toolbar-color, var(--ion-text-color, blue));
+
 }
 .ion-search{
     width: 90%;

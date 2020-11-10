@@ -16,10 +16,10 @@ import { NgCalendarModule  } from 'ionic2-calendar';
 import { ChooseChairPage } from './home/choosechair/choosechair.page';
 import { ModalPage } from './home/choosenumber/modal';
 import { HomePage } from './home/home.page';
-import { UserProvider } from 'src/service/ultility';
+import { UserProvider } from 'src/service/userprovider';
 import { CalendarModule } from 'ion2-calendar';
-import { ProviderChooseSeat } from 'src/service/providerChooseSeat';
 import { ProviderBooking } from 'src/service/providerBooking';
+
 @NgModule({
   declarations: [AppComponent , ChooseChairPage, ModalPage, HomePage],
   entryComponents: [],
@@ -27,12 +27,11 @@ import { ProviderBooking } from 'src/service/providerBooking';
     MbscModule, BrowserModule, 
     CalendarModule,
     FormsModule, ReactiveFormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule,
-    NgCalendarModule
+    NgCalendarModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    ProviderChooseSeat,
     ProviderBooking,
     UserProvider,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

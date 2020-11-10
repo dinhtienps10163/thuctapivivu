@@ -6,7 +6,7 @@ import { SearchGoPage } from './searchgo.page';
 
 import { SearchGoPageRoutingModule } from './searchgo-routing.module';
 import { service } from '../../../../service/service';
-import { UserProvider } from 'src/service/ultility';
+import { UserProvider } from 'src/service/userprovider';
 
 
 @NgModule({

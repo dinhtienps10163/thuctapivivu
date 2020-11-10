@@ -11,87 +11,96 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-content">
-<div>
-  <ion-item style="--background: var(--ion-background-color, #fff)">
-    <ion-label style="font-size: 16px; font-weight: bold;"> THÔNG TIN HÀNH KHÁCH</ion-label>
+<div class="div-border" *ngIf="isShowb">
+  <ion-item class="item-border-block" >
+    <ion-label style="font-size: 18px; font-weight: bold;"> Thông tin khách hàng</ion-label>
   </ion-item>
-  <ion-item>
-    <ion-title>Người lớn</ion-title>
+  <div *ngFor="let item of doiTuong">
+  <ion-item (click)="onClickNguoiLon(item)" class="item-border">
+    <ion-title style="font-size: 15px; font-weight: bold;">{{item}}</ion-title>
     <small>Nhập thông tin</small>
   </ion-item>
-  <div [hidden]="!isHidden">
-  <ion-item>
-    <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
+  <div [hidden]="isHidden">
+  <ion-item class="item-border-block">
+    <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"[(ngModel)]="ten"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
+  <ion-item class="item-border-block">
+    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *" [(ngModel)]="socmnd"></ion-input>
   </ion-item>
 </div>
-<ion-item>
-  <ion-title>Sinh viên</ion-title>
+</div>
+<!-- <ion-item (click)="onClickSinhVien()" *ngIf="isShow" class="item-border">
+  <ion-title style="font-size: 15px; font-weight: bold;">{{sinhvien}}</ion-title>
   <small>Nhập thông tin</small>
 </ion-item>
-<div [hidden]="!isHidden">
-<ion-item>
+<div [hidden]="isHiddenb" >
+<ion-item class="item-border-block">
   <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
 </ion-item>
-<ion-item>
+<ion-item class="item-border-block">
   <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
 </ion-item>
 </div>
-<ion-item>
-  <ion-title>Người lớn tuổi (từ 60 tuổi)</ion-title>
+<ion-item (click)="onClickLonTuoi()"*ngIf="isShowb" class="item-border">
+  <ion-title style="font-size: 15px; font-weight: bold;">{{nguoilontuoi}} (từ 60 tuổi)</ion-title>
   <small>Nhập thông tin</small>
 </ion-item>
-<div [hidden]="isHidden">
-<ion-item>
+<div [hidden]="isHiddenc" >
+<ion-item class="item-border-block">
   <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
 </ion-item>
-<ion-item>
+<ion-item class="item-border-block">
   <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
 </ion-item>
+</div> -->
 </div>
-</div>
-  <div>
-  <ion-item style="--background: var(--ion-background-color, #ecf0f5)">
-    <ion-label style="font-size: 18px"> THÔNG TIN HÀNH KHÁCH</ion-label>
+  <div *ngIf="isShow">
+  <ion-item class="item-border">
+    <ion-label style="font-size: 18px ; font-weight: bold;"> Thông tin khách hàng</ion-label>
   </ion-item>
-  <ion-item>
-    <ion-select placeholder="Người lớn">
-      <ion-select-option value="f">Người lớn</ion-select-option>
-      <ion-select-option value="m">Sinh Viên</ion-select-option>
-      <ion-select-option value="g">Người lớn tuổi (từ 60 tuổi)</ion-select-option>
-
+    <ion-select placeholder="Người lớn" (ionChange)="onSelect($event)" Interface='action-sheet'>
+      <ion-select-option class="title-option" *ngFor="let item of data" [value]="item.name">{{item.name}}</ion-select-option>
     </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
+  <ion-item class="item-border-block">
+    <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"[(ngModel)]="name"></ion-input>
+  </ion-item >
+  <ion-item >
+    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"[(ngModel)]="CMND"></ion-input>
   </ion-item>
 </div>
-
-  <ion-item style="--background: var(--ion-background-color, #ecf0f5)">
-    <ion-label style="font-size: 18px">THÔNG TIN NGƯỜI ĐẶT</ion-label>
+<div >
+  <ion-item class="item-border-block" >
+    <ion-label style="font-size: 18px; font-weight: bold;">Thông tin đặt hàng</ion-label>
   </ion-item>
-  <ion-item>
-    <ion-input placeholder="Họ tên"></ion-input>
+  <ion-item >
+    <ion-input placeholder="Họ tên" [(ngModel)]="name"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
+  <ion-item >
+    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *" [(ngModel)]="CMND"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-input placeholder="Email"></ion-input>
+  <ion-item >
+    <ion-input placeholder="Email" [(ngModel)]="email"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-input placeholder="Số điện thoại"></ion-input>
+  <ion-item >
+    <ion-input placeholder="Số điện thoại" [(ngModel)]="phone"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-checkbox></ion-checkbox>
+</div>
+  <ion-item class="item-border-block">
+    <ion-checkbox [(ngModel)]="isCheck"></ion-checkbox>
     <ion-title style="font-size: 14px">Xuất hóa đơn</ion-title>
   </ion-item>
+  <div *ngIf="isCheck">
+    <ion-item >
+      <ion-input placeholder="Tên công ty" [(ngModel)]="nameCty"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-input placeholder="Mã số thuế" [(ngModel)]="maThue"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-input placeholder="Địa chỉ" [(ngModel)]="address"></ion-input>
+    </ion-item>
+  </div>
 </ion-content>
 <ion-footer style="--background: var(--ion-background-color, #ecf0f5)">
-  <ion-button style="width: 99%">Tiếp tục</ion-button>
+  <ion-button style="width: 99%" (click)="onclick()">Tiếp tục</ion-button>
 </ion-footer>

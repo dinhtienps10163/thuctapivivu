@@ -28,7 +28,7 @@
   overflow: scroll;
 }
 .div-right {
-  width: 75%;
+  width: 70%;
   height: 90%;
   background-color: white;
   margin-left: 22%;
@@ -60,5 +60,48 @@
   border: 1px solid #a7a7a7;
 }
 .border:hover{
-    border: 1px solid #0000ff;
+  border: 1px solid #0000ff
 }
+.view{
+  width: 7px; 
+  height: 15px; 
+  border-radius: 10px; 
+  //position: absolute;
+  //margin-left: 43px; 
+  //margin-top: 3px;
+  background-color: #a4a6a8;
+}
+
+.content{
+  width: 7px; 
+  height: 15px;
+  margin-top: -15px; 
+  border-radius: 10px; 
+  margin-left: 40px; 
+  background-color: #a4a6a8;
+}
+
+.iconghe{
+  margin-left: 10px;
+  font-size: 28px; 
+  display: inline-table; 
+  background-color: #a4a6a8;
+}
+
+.top{
+  margin-top: -15px;
+}
+.ion-row{
+  margin-top: 20px;
+}
+.title{
+  font-size: 14px; 
+  margin-top: -28px; 
+  margin-left: -5px;
+  color: white;
+  font-weight: bold;
+}
+// .selected{
+//   color: #000 !important;
+//   background-color: orangered ;
+// }

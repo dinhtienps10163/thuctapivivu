@@ -1,0 +1,78 @@
+
+.background-center{
+    background-color: blue;
+    
+}
+.ion-item{
+    --color: var(--ion-toolbar-color, var(--ion-text-color, blue));
+
+}
+.title-header{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.icon{
+    font-size: 30px;
+    color: white;
+}
+.ion-content{
+    --background: var(--ion-background-color, #ecf0f5);
+}
+.ion-icons{
+    margin-left: -20px;
+}
+.item-title{
+    font-size: 16px;
+    color: black;
+}
+.ion-title{
+    font-size: 16px;
+    text-align: left;
+    background-color: '#0000';
+}
+.title-time-run{
+    font-size: 16px;
+    text-align: center;
+}
+.title-sum{
+    font-size: 16px;
+    text-align: left;
+}
+.title-price{
+    font-size: 16px;
+    text-align: right;
+    font-weight: bold;
+
+}
+.title-left{
+    font-size: 16px;
+    color: #0009;
+    text-align: left;
+}
+.title-right{
+    font-size: 16px;
+    color: #000;
+    text-align: right;
+}
+.title-xn{
+    font-size: 14px;
+    margin-top: -20px;
+    margin-left: 25px;
+}
+.checkbox{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.div-xn{
+    width: 90%;
+    margin-left: 20px;
+}
+.item-border-block{
+    --border-color: var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgb(255, 255, 255))));
+}
+
+.item-border{
+    --border-color: var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgb(255, 255, 255))));
+    --background: var(--ion-background-color, #ecf0f5);
+}

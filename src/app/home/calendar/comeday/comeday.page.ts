@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
 import { CalendarComponentOptions } from 'ion2-calendar';
 import * as moment from 'moment';
-import { UserProvider } from '../../../../service/ultility';
+import { UserProvider } from '../../../../service/userprovider';
 
 @Component({
   selector: 'app-comeday',

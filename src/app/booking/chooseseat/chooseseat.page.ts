@@ -1,100 +1,99 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Component, NgZone } from '@angular/core';
+import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
-import { Cho, chonCho, ToaXe } from 'src/service/model';
-import { toa } from 'src/service/modeltoa';
-import { ProviderChooseSeat } from 'src/service/providerChooseSeat';
+import { IonContent, NavController } from '@ionic/angular';
+import { ChobyToa, ChoChinh } from 'src/service/model';
+import { ToaX } from 'src/service/modeltau';
+import { ProviderBooking } from 'src/service/providerBooking';
+import { UserProvider } from 'src/service/userprovider';
 
 @Component({
   selector: 'app-chooseseat',
   templateUrl: 'chooseseat.page.html',
   styleUrls: ['chooseseat.page.scss'],
 })
-export class ChooseSeatPage {
-  data = [
-    {id: 1},
-    {id: 2},
-    {id: 3},
-    {id: 4},
-    {id: 5},
-    {id: 6},
-    {id: 7},
-    {id: 8},
-    {id: 9},
-    {id: 10},
-    {id: 11},
-    {id: 12},
-    {id: 13},
-    {id: 14},
-    {id: 15},
-    {id: 16},
-    {id: 17},
-    {id: 18},
-    {id: 19},
-  ]
-    public dmTauId;
-    public loaiCho;
-    public toaSo;
-    public toaNo;
-    public slToiThieu;
-    public khongLayGiaVe;
-    public BookingCode;
+export class ChooseSeatPage implements OnInit {
+  public isShow: boolean = false;
+  public isDisable: boolean = false;
+  public ngaydi;
+  public chontau;
+  public BookingCode;
+  public toax;
+  public choChinh: ChoChinh;
+  public chobytoa: ChobyToa;
+  public chochinh = [];
+  chonghe = [];
+  public giaVe
+  public sltoithieu;
 
-    public chos: Cho;
-    public chonCho: chonCho;
-    public choNgoi = [];
-  slideOpts = {
-    initialSlide: 0,
-    speed: 400,
-    slidesPerView: 1,
-  };
-  
-  constructor(private http: HttpClient, private router: Router, private NavCtr : NavController, private _zone: NgZone,
-    public _providerChooseSeat: ProviderChooseSeat,
+  constructor(private http: HttpClient, private router: Router, private NavCtr: NavController, private _zone: NgZone,
+    public _userProvider: UserProvider,
+    public _providerBooking: ProviderBooking,
 
-    ) {
-     this._zone.run(()=>{
-      this._providerChooseSeat.itemChange.pipe().subscribe((data) => {
-        if (data) {
-          this.loaiCho = this._providerChooseSeat.loaiCho;
-          console.log(this.loaiCho);
-        }
+  ) {
+    //console.log(this._providerBooking);
+
+    this.http.get('./assets/datatimkiemcho.json').subscribe(
+      data => {
+        this.chobytoa = data as ChobyToa;
+        this.choChinh = this.chobytoa.ChoChinhs as ChoChinh;
+       // console.log(this.chobytoa);
+
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err.message)
       });
 
-      this.http.get('./assets/datatimkiemcho.json').subscribe(
-        data => {
-          this.chonCho = data as chonCho;          
-          this.chos = this.chonCho.Chos as Cho;
-          console.log(this.chonCho.Chos);
 
-          // this.choNgoi.push(this.chos);
-          // let itemselected = this.choNgoi[0].filter((item) => { return item.LoaiCho == this._providerChooseSeat.loaiCho });
-          // if (itemselected && itemselected.length > 0) {
-          //   this.chos = itemselected;
-          // } else {
-          //   this.chos = null;
-          // }
-        },
-        (err: HttpErrorResponse) => {
-          console.log(err.message)
-        })
-     })
+
+  }
+
+  ngOnInit() {
+    this.ngaydi = this._userProvider.titleCome;
+    this.chontau = this._providerBooking.chontau
+    //this.khongLayGiaVe = this._providerChooseSeat.khongLayGiaVe;
+    this.BookingCode = this._providerBooking.BookingCode;
+    this.toax = this._providerBooking.chontau.ToaXes;
+    this.sltoithieu = this._providerBooking.sltoithieu;
+    //console.log(this.chontau);
+   
+  }
+  clickitem(item: ChoChinh) {
+ 
+    //console.log(item);
+    this.giaVe = item.GiaVe
+    this._providerBooking.thuTien = this._providerBooking.tongTien = this._providerBooking.thanhTien = item.TienThu;
+    this._providerBooking.phiBaoHiem = item.BaoHiem;
+    this.chonghe.push(item);
+    this._providerBooking.itemChange.emit(1);
+    if(this.chonghe.length && this.chonghe.length >= this._providerBooking.sltoithieu + 1){
+      console.log('tối đa');
+      
+    }
+  }
+  
+  clicktoa(item) {
+    this.isShow = true
+    //console.log(item)
+    this.chochinh.push(this.choChinh);
+    let itemselected = this.chochinh[0].filter((items) => { return items.ToaSo == item.ToaSo && items.DMToaXeVatLyId == item.Id });
+    if (itemselected && itemselected.length > 0) {
+      this.choChinh = itemselected;
+    } else {
+      this.choChinh = null;
+    }
     
-  }
-  showChoNgoi(){
-    
 
   }
-
-  clicktoa(item){
-    console.log(item.id)
-  }
-  goback(){
+  goback() {
     this.NavCtr.back();
   }
 
-  onClick(){
+  onClick() {
+
+    this._providerBooking.chonghe = this.chonghe;
+    //console.log(this.chonghe);
+
     this.router.navigate(['informationticket'])
   }
 }

@@ -6,7 +6,7 @@ import { GoDayPage } from './goday.page';
 import { NgCalendarModule  } from 'ionic2-calendar';
 
 import { GoDayPageRoutingModule } from './goday-routing.module';
-import { UserProvider } from 'src/service/ultility';
+import { UserProvider } from 'src/service/userprovider';
 import { CalendarModule } from 'ion2-calendar';
 
 

@@ -14,6 +14,6 @@ export class LoginUserPage {
     this.NavCtr.back()
   }
   login(){
-    this.router.navigate(['main'])
+    this.router.navigate(['main/home'])
   }
 }
