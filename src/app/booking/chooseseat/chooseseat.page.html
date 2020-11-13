@@ -28,7 +28,7 @@
     <ion-grid *ngIf="isShow">
       <ion-row>
         <ion-col class="ion-row" *ngFor="let item of choChinh" >
-          <div (click)="clickitem(item)">
+          <div (click)="clickitem(item)" class="border-div">
             <div>
               <div class="view"></div>
               <div class="content"></div>
@@ -59,7 +59,7 @@
 <ion-footer>
   <ion-item>
     <ion-title class="sum-price">Tổng tiền</ion-title>
-    <ion-title class="price">{{giaVe}}đ</ion-title>
+    <ion-title class="price">{{GiaVe}}đ</ion-title>
   </ion-item>
   <ion-button class="ion-button" (click)="onClick()">Tiếp tục</ion-button>
 </ion-footer>

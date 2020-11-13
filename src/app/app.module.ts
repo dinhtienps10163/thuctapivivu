@@ -27,7 +27,8 @@ import { ProviderBooking } from 'src/service/providerBooking';
     MbscModule, BrowserModule, 
     CalendarModule,
     FormsModule, ReactiveFormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule,
-    NgCalendarModule,
+    NgCalendarModule  
+    
   ],
   providers: [
     StatusBar,

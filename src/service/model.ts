@@ -34,23 +34,9 @@ export class ChobyToa {
     ChoChinhStatus: number;
     ChoPhuStatus: number;
 }
-
-
-export class Doituong{
-    name: string
-}
-export class ChonGhe{
-    choso: number;
-}
-export class Information{
-    name: string;
-    phone: number;
-    email: string;
-    CMND: number;
-    constructor(name: string, phone: number, email: string, CMND: number){
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-        this.CMND = CMND;
-    }
+export class XinVe {
+    Status: number;
+    Duration: number;
+    LockBD: Date;
+    TicketId: number;
 }

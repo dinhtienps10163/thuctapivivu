@@ -1,6 +1,5 @@
 import { Component, NgZone } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Doituongkhachhang } from 'src/service/modelBooking';
 import { ProviderBooking } from 'src/service/providerBooking';
 import { listDoiTuongKH } from '../../../service/modeldanhmuc';
 import { service } from '../../../service/service';
@@ -15,10 +14,10 @@ export class ModalPage {
   public listDoiTuongKH: listDoiTuongKH[]
   public tenPTOnline;
   public sl;
-  public doituong: any = [];
+  public maPT;
   isDisableleft: boolean = true
   isDisableright: boolean = false
-  data: Doituongkhachhang[] = [];
+  public data:any = <listDoiTuongKH[]>[];
   constructor(
     private zone: NgZone,
     private modalController: ModalController,
@@ -42,7 +41,9 @@ export class ModalPage {
   confirm() {
     this.modalController.dismiss();
     this._providerBooking.sltoithieu = this.sl;
-    this._providerBooking.doituongs = this.data
+    this._providerBooking.doituongs = this.data;
+    this._providerBooking.maPT = this.maPT;
+    
   }
   dismiss() {
     this.modalController.dismiss()
@@ -50,15 +51,16 @@ export class ModalPage {
   clickplus(item) {
     var listarr = this.listDoiTuongKH.map((item) => { return item.amount })
     let count = listarr.reduce((c, total: any) => { return total += c });
+    this.maPT = item.maPT;    
     this.sl = count;
     if (item.amount > 0 && item.amount < 2) {
-      this.data.push(item.tenPTOnline)
+      this.data.push(item)
     }else if (item.amount > 2 && item.amount < 4) {
-      this.data.push(item.tenPTOnline)
+      this.data.push(item)
     }else if (item.amount > 1 && item.amount < 3) {
-      this.data.push(item.tenPTOnline)
+      this.data.push(item)
     }else if(item.amount < 1){
-      this.data.push(item.tenPTOnline)
+      this.data.push(item)
     };
         //this.tenPTOnline = item.tenPTOnline
     this.zone.run(() => {
@@ -92,13 +94,13 @@ export class ModalPage {
     let count = listarr.reduce((c, total: any) => { return total += c });
     this.sl = count;
     if (item.amount > 0 && item.amount < 2) {
-      this.data.push(item.tenPTOnline)
+      this.data.push(item)
     }else if (item.amount > 2 && item.amount < 4) {
-      this.data.push(item.tenPTOnline)
+      this.data.push(item)
     }else if (item.amount > 1 && item.amount < 3) {
-      this.data.push(item.tenPTOnline)
+      this.data.push(item)
     }else if(item.amount < 1){
-      this.data.push(item.tenPTOnline)
+      this.data.push(item)
     };
     this.zone.run(() => {
       item.amount--

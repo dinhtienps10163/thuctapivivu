@@ -17,7 +17,7 @@ export class UserProvider {
     //ngay thang
     titlego;
     titleCome;
-    ngayDi;
+    //dayGokhuhoi;
     //chon doi tuong
     listDoiTuongKH: listDoiTuongKH;
     //con cho ngoi    

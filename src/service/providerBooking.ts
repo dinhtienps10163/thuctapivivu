@@ -1,6 +1,5 @@
 import { EventEmitter, Injectable} from '@angular/core';
-import { Doituong, } from './model';
-import { Doituongkhachhang, Thongtinkhachhang } from './modelBooking';
+import { ChoChinh } from './model';
 import { ListTau, RootObject, ToaX } from './modeltau';
 
 
@@ -11,30 +10,37 @@ export class ProviderBooking {
     maGaDi;
     maGaDen;
     loaiCho;
-    dayGo;
+    ngayDi;
     //dayCome;
-    gaGo;
-    gaCome;
+    gaDi;
+    gaDen;
     //chon tau
     chontau: ListTau;
     //chon cho
     sltoithieu;
     BookingCode;
-    chonghe=[];
+    chonghe = [];
     // kiem tra thong tin ve
-    doituongs: Doituongkhachhang[] = [];
-    thongtinkhachhang: Thongtinkhachhang[]=[];
+    doituongs = [];
     doiTuong;
-    name;
-    cmnd;
-    phiBaoHiem;
+    doiTuong2;
+    doiTuong3;
+    doiTuong4;
+    maPT;
     ghiChu;
-    thuTien;
     tongTien;
     thanhTien;
-    phone;
-    email;
 
+    loaive;
+    slve;
+
+    // booking
+    hanhkhach;
+    hanhkhachhai;
+    hanhkhachba;
+    hanhkhachtu;
+    bookingPerson;
+    //khứ hồi
     // constructor() {
 
     // }

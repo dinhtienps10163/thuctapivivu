@@ -10,18 +10,18 @@
     <div style="margin-left: 20px; width: 90%; --background: var(--ion-background-color, #0000); padding-top: 20px;">
     <div>
   <ion-label class="label">GA ĐI</ion-label>
-  <div class="item-address" (click)="_openModalSearchGo()">
+  <div class="item-address" (click)="_openModalSearchGo()" [formGroup]="valid">
     <ion-item  class="ion-item">
-      <ion-input class="title-address"[(ngModel)]="GaBacNamDi"></ion-input>
+      <ion-input type="text" formControlName="gadi" class="title-address"[(ngModel)]="GaBacNamDi"></ion-input>
       <ion-icon class="ion-icons" name="caret-down-outline"></ion-icon>
     </ion-item>
   </div>
 </div>
-  <div style="margin-top: 10px; ">
+  <div style="margin-top: 10px;" [formGroup]="valid">
     <ion-label class="label">GA ĐẾN</ion-label>
     <div class="item-address" (click)="_openModalSearchCome()">
       <ion-item  class="ion-item">
-        <ion-input class="title-address"[(ngModel)]="GaBacNamDen"></ion-input>
+        <ion-input type="text" formControlName="gaden" class="title-address"[(ngModel)]="GaBacNamDen"></ion-input>
         <ion-icon class="ion-icons" name="caret-down-outline"></ion-icon>
       </ion-item>
     </div>
@@ -46,19 +46,19 @@
     <ion-icon style="font-size: 30px; color: white;" name="location-outline"></ion-icon>  </div>
   <div style="margin-top: 10px" *ngIf="!ischeck">
     <ion-label class="label">NGÀY ĐI</ion-label>
-    <div   class="item-date" (click)="_openModalCalendargo()"> 
+    <div  class="item-date" (click)="_openModalCalendargo()" > 
       <ion-item  class="ion-item">
-        <ion-input class="title-address" [(ngModel)]="dayGo"></ion-input>
+        <ion-input class="title-address" [(ngModel)]="ngaydi"></ion-input>
         <ion-icon class="ion-icons" name="calendar-outline"></ion-icon>
       </ion-item>
     </div>
   </div>
   <div *ngIf="ischeck" class="div-datecome">
     <ion-label class="label">NGÀY ĐI - NGÀY VỀ</ion-label>
-    <div class="item-date" (click)="_openModalCalendarcome()">
+    <div class="item-date" (click)="_openModalCalendarcome()" >
       <ion-item  class="ion-item">
-        <ion-input class="title-day" [(ngModel)]="dayGo"></ion-input>
-        <ion-input class="title-day"[(ngModel)]="dayCome"></ion-input>
+        <ion-input  class="title-day" [(ngModel)]="ngaydi"></ion-input>
+        <ion-input  class="title-day"[(ngModel)]="dayCome"></ion-input>
         <ion-icon class="ion-icons" name="calendar-outline"></ion-icon>
       </ion-item>
     </div>
@@ -71,23 +71,23 @@
     </div>
   <div style="margin-top: 20px">
     <ion-label class="label">HÀNH KHÁCH</ion-label>
-    <div class="item-custom" (click)="_openModalChooseNumber()">
+    <div class="item-custom" (click)="_openModalChooseNumber()" [formGroup]="valid">
       <ion-item class="ion-item" >
-            <ion-input style="color: #000; "[(ngModel)]="khachHang"></ion-input>
+            <ion-input type="text" formControlName="doituong" style="color: #000; "[(ngModel)]="khachHang"></ion-input>
         <ion-icon class="ion-icons" name="people-outline"></ion-icon>
       </ion-item>
     </div>
   </div>
   <div style="margin-top: 10px">
     <ion-label class="label">LOẠI GHẾ</ion-label>
-    <div class="item-custom" (click)="_openModalChoosechair()">
+    <div class="item-custom" (click)="_openModalChoosechair()" [formGroup]="valid">
       <ion-item class="ion-item">
-        <ion-input style="color: #000;"[(ngModel)]="nhomCho"></ion-input>
+        <ion-input type="text" formControlName="chongoi" style="color: #000;"[(ngModel)]="nhomCho"></ion-input>
         <!-- <ion-icon class="ion-icons" name="calendar-outline"></ion-icon> -->
       </ion-item>
     </div>
   </div>
-  <ion-button (click)="gobooking()" color= 'orangered' class="ion-button">Tìm kiếm</ion-button>
+  <ion-button (click)="gobooking()" color='orangered' class="ion-button">Tìm kiếm</ion-button>
 </div>
 </div>
 <div style="background-color: #ecf0f5;">

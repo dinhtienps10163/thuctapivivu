@@ -9,6 +9,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { BookingService } from 'src/service/bookingservice';
 import { PayTicketPage } from './payticket';
+import { Thongtinve } from 'src/service/thongtinve';
 
 
 @NgModule({
@@ -24,6 +25,6 @@ import { PayTicketPage } from './payticket';
     AngularFireDatabaseModule,
   ],
   declarations: [PayTicketPage],
-  providers:[BookingService]
+  providers:[BookingService, Thongtinve]
 })
 export class PayTicketPageModule {}

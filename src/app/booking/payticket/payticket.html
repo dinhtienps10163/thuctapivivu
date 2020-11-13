@@ -30,15 +30,15 @@
       </div>
       <ion-item class="item-border-block">
         <ion-title class="title-left">Loại vé</ion-title>
-        <ion-title class="title-right"> Một chiều</ion-title>
+        <ion-title class="title-right"> {{loaive}}</ion-title>
       </ion-item>
       <ion-item class="item-border-block" >
         <ion-title class="title-left">Số lượng </ion-title>
-        <ion-title class="title-right">1</ion-title>
+        <ion-title class="title-right">{{slve}}</ion-title>
       </ion-item>
       <ion-item class="item-border-block">
         <ion-title class="title-left">Số tiền</ion-title>
-        <ion-title class="title-right">536.000đ</ion-title>
+        <ion-title class="title-right">{{sotien}}đ</ion-title>
       </ion-item>
       <ion-item >
         <ion-title class="title-left">Phí giao dịch</ion-title>
@@ -46,11 +46,11 @@
       </ion-item>
       <ion-item class="item-border-block">
         <ion-title class="title-left">Tổng tiền</ion-title>
-        <ion-title class="title-right">536.000đ</ion-title>
+        <ion-title class="title-right">{{thanhtien}}đ</ion-title>
       </ion-item>
     </ion-content>
   <ion-footer>
-    <ion-button  style="width: 100%; height: 40px;" >Xác nhận mua vé</ion-button>
+    <ion-button  style="width: 100%; height: 40px;" (click)="Booking()">Xác nhận mua vé</ion-button>
   </ion-footer>
   
   

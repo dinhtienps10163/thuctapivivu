@@ -24,7 +24,7 @@ export class GoDayPage {
     
  //  };
   constructor(private NavCtr: NavController,private modalController: ModalController,
-   private router: Router, public _userProvider: UserProvider) { }
+    private router: Router, public _userProvider: UserProvider) { }
   
    
   ngOnInit() {

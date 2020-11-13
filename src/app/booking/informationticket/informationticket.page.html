@@ -31,7 +31,7 @@
           </ion-item>
           <ion-item *ngFor="let item of chonghe">
             <ion-title class="title-time">Ghế {{item.ChoSo}} - Toa {{item.ToaSo}}</ion-title>
-            <ion-title class="title-train">{{item.GiaVe}}đ</ion-title>
+            <ion-title class="title-train">{{item.GiaVe*1000}}đ</ion-title>
         </ion-item>
       </div>
   </ion-content>

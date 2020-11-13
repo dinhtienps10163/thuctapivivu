@@ -9,6 +9,7 @@ import { SearchComePage } from './search/searchcome/searchcome.page';
 import { GoDayPage } from './calendar/goday/goday.page';
 import { ComeDayPage } from './calendar/comeday/comeday.page';
 import { ProviderBooking } from 'src/service/providerBooking';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ import { ProviderBooking } from 'src/service/providerBooking';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  public ischeck: boolean = false
+  public ischeck: boolean = false;
+  public isShowKhuHoi;
   slideOpts = {
     initialSlide: 0,
     speed: 400,
@@ -27,13 +29,12 @@ export class HomePage implements OnInit {
   public khachHang;
   public doiTuongkhachHang;
   public GaBacNamDen;
-  public dayGo;
+  public ngaydi;
   public dayCome;
-
   public maGaDi;
   public maGaDen;
   public loaiCho;
-
+  private valid;
  // public status: ChoChinhStatus
 
   constructor(
@@ -42,6 +43,7 @@ export class HomePage implements OnInit {
     public _userProvider: UserProvider,
     public _providerBooking: ProviderBooking,
     private _zone: NgZone,
+    private formBuilder: FormBuilder,
     private navCtrl: NavController) { }
 
   ngOnInit() {
@@ -58,42 +60,63 @@ export class HomePage implements OnInit {
           this.GaBacNamDen = this._userProvider.tenGaDen;
           this.maGaDen = this._userProvider.listGaBacNamden;
           //ngay thang
-          this.dayGo = this._userProvider.titlego;
+          this.ngaydi = this._userProvider.titlego;
           this.dayCome = this._userProvider.titleCome;
-          //this.ngayDi = this._userProvider.ngayDi;
+          //this.dayGokhuhoi = this._userProvider.dayGokhuhoi;
           //doi tuong
           this.khachHang = this._userProvider.listDoiTuongKH;
           //nhom cho
           this.nhomCho = this._userProvider.name;
           this.loaiCho = this._userProvider.listNhomCho;
-         
           //console.log(this._userProvider)
         }
       });
 
     })
    // console.log(this.status);
+  //  this.validation = this.formBuilder.group({
+  //     gadi: new FormControl('', Validators.required),
+  //     gaden: new FormControl('', Validators.compose([
+  //       Validators.required,
+  //       Validators.pattern('')
+  //     ]))
+  //  });
+   this.valid = new FormGroup({
+   gadi: new FormControl('', Validators.required),
+   gaden: new FormControl('', Validators.required),
+   ngay: new FormControl('', Validators.required),
+   doituong: new FormControl('', Validators.required),
+   chongoi: new FormControl('', Validators.required),
+});
+
   }
 
   gobooking() {
-    // this.navCtrl.navigateForward('choosetrip');
+    
+    
+    if(this.GaBacNamDi !== undefined && this.GaBacNamDen !== undefined &&this.ngaydi !== undefined && this.khachHang !== undefined && this.nhomCho !== undefined){
     this.router.navigate(['choosetrip']);
     this._providerBooking.maGaDi = this.maGaDi
     this._providerBooking.maGaDen = this.maGaDen
     this._providerBooking.loaiCho = this.loaiCho
     //this._providerBooking.dayCome = this.dayCome;
-    this._providerBooking.dayGo = this.dayGo;
-    this._providerBooking.gaGo = this.GaBacNamDi;
-    this._providerBooking.gaCome = this.GaBacNamDen;
-
+    this._providerBooking.ngayDi = this.ngaydi;
+    this._providerBooking.gaDi = this.GaBacNamDi;
+    this._providerBooking.gaDen = this.GaBacNamDen;
+    this._providerBooking.loaive = this.isShowKhuHoi;
     this._providerBooking.itemChange.emit(1);
-
+    
+    }else{
+      console.log("Bạn phải nhập đầy đủ!");
+    }
   }
   onChange(event){
     if(this.ischeck == false){
       this.dayCome = "";
+      this.isShowKhuHoi = 0;
+    }if(this.ischeck == true){
+      this.isShowKhuHoi = 1;
     }
-    //console.log(event)
   }
   selectedMovie() {
 
@@ -123,7 +146,7 @@ export class HomePage implements OnInit {
     await modal.present();
     // console.log(this.dayCome);
     this._userProvider.titleCome = this.dayCome;
-    this._userProvider.titlego = this.dayGo;
+    this._userProvider.titlego = this.ngaydi;
 
     this._userProvider.itemGaChange.emit(1);
   }
@@ -134,7 +157,7 @@ export class HomePage implements OnInit {
       cssClass: 'my-modal-calendargo-css'
     })
     await modal.present();
-    this._userProvider.titlego = this.dayGo;
+    this._userProvider.titlego = this.ngaydi;
     this._userProvider.itemGaChange.emit(1);
     //   console.log(this.dayGo)
   }

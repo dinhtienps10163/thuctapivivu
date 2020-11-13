@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { BookingService } from 'src/service/bookingservice';
 import { ProviderBooking } from 'src/service/providerBooking';
-import ModelBooking from '../../../service/modelBooking';
 @Component({
   selector: 'app-informationbooking',
   templateUrl: 'informationbooking.page.html',
@@ -12,60 +11,87 @@ import ModelBooking from '../../../service/modelBooking';
 export class InformationBookingPage {
   isCheck: boolean = false;
   public time;
-  public chonghe:any = [];
-  booking: ModelBooking = new ModelBooking();
+  public chonghe: any = [];
+  public chontau: any = [];
   submitted = false;
+  public ngaydi;
+  public ngayve;
+  public doituong;
+  public doituong2;
+  public doituong3;
+  public doituong4;
+  public tongTien;
+  public ve1:any = "";
+  public ve2:any = "";
+  public ve3:any = "";
+  public ve4:any = "";
+  public thanhTien: any = "";
+  //thong tin khach hang
+  public thongtin: any = [];
+  public thongtin2: any = [];
+  public thongtin3: any = [];
+  public thongtin4: any = [];
+
   //data booking
   constructor(private router: Router,
     public _providerBooking: ProviderBooking,
     private _zone: NgZone,
     private NavCtr: NavController,
-    private bookingService : BookingService,
-    ) {
+    private bookingService: BookingService,
+  ) {
 
-      this._zone.run(() => {
+    this._zone.run(() => {
+      this.chonghe = this._providerBooking.chonghe;
+      this.ngaydi = this._providerBooking.ngayDi;
+      this.chontau = this._providerBooking.chontau;
 
-        this.booking.doiTuong = this._providerBooking.doiTuong;
-        this.booking.chontau = this._providerBooking.chontau;
-        this.booking.name = this._providerBooking.name;
-        this.booking.cmnd = this._providerBooking.cmnd;
-        this.booking.phiBaoHiem = this._providerBooking.phiBaoHiem;
-        //this.booking.ghiChu = this._providerBooking.ghiChu;
-        this.booking.BookingCode = this._providerBooking.BookingCode;
-        this.booking.tienThu = this._providerBooking.thuTien;
-        this.booking.tongTien = this._providerBooking.tongTien;
-        this.booking.thanhTien = this._providerBooking.thanhTien;
-        this.booking.phone = this._providerBooking.phone;
-        this.booking.email = this._providerBooking.email;
-        this.time = this._providerBooking.chontau.GioDi + " - " + this._providerBooking.chontau.GioDen;
-        this.chonghe = this._providerBooking.chonghe;
-        //this.choNgoi = "Ghế " + this.chonghe.ChoSo + " - Toa " + this.chonghe.ToaSo
+      this.doituong = this._providerBooking.doiTuong;
+      this.doituong2 = this._providerBooking.doiTuong2;
+      this.thongtin = this._providerBooking.hanhkhach;
+      this.thongtin2 = this._providerBooking.hanhkhachhai;
+      this.thongtin3 = this._providerBooking.hanhkhachba;
+      this.doituong3 = this._providerBooking.doiTuong3;
+      this.thongtin4 = this._providerBooking.hanhkhachtu;
+      this.doituong4 = this._providerBooking.doiTuong4;
+      this.ve1 = this.chonghe[0].TienThu;
+      this.tongTien = this.ve1*1000
+
+      if (this.chonghe[1]) {
+        this.ve2 = this.chonghe[1].TienThu;
+        this.tongTien = (this.ve1 + this.ve2)*1000;
+
       }
-  )
-      
+      if (this.chonghe[2]) {
+        this.ve3 = this.chonghe[2].TienThu;
+        this.tongTien = (this.ve1 + this.ve2 + this.ve3)*1000;
+
+      }
+      if (this.chonghe[3]) {
+        this.ve4 = this.chonghe[3].TienThu;
+        this.tongTien = (this.ve1 + this.ve2 + this.ve3 + this.ve4)*1000 ;
+
+      }
+    })
   }
   ngOnInit() {
-    
+
   }
-  checked(ev){
-    console.log(this.isCheck);
-        
+  checked(ev) {
+
   }
-  saveBooking(){
-    setTimeout(() => {
-      console.log("hết thời gian giữ vé");
-    }, 3000);
+  saveBooking() {
+    this._providerBooking.tongTien = this.tongTien;
     this.router.navigate(['payticket']);
     // this.bookingService.create(this.booking).then(()=>{
-      
+
     //   this.submitted = true;
     // })
     //console.log(this.booking);
-    
+
   }
-  newBooking(): void{
+  newBooking(): void {
     this.submitted = false;
-    this.booking = new ModelBooking();
+    //this.booking = new ModelBooking();
   }
   goback() {
     this.NavCtr.back();

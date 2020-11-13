@@ -5,6 +5,7 @@ import {  ListTau, RootObject, ToaX } from 'src/service/modeltau';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { UserProvider } from 'src/service/userprovider';
 import { ProviderBooking } from 'src/service/providerBooking';
+import { XinVe } from 'src/service/model';
 
 @Component({
   selector: 'app-choosetrip',
@@ -14,47 +15,30 @@ import { ProviderBooking } from 'src/service/providerBooking';
 
 
 export class ChooseTripPage implements OnInit {
-  // @Input() item: listNhomCho;
-  // @Output() dathangEvent = new EventEmitter<listNhomCho>()
 
   public isdisabled: boolean = true
   public RootObject: RootObject;
   public ListTau: ListTau;
   public ToaXes: ToaX;
   public listTaus = [];
-  public itemlistTau = [];
-
-  public dayGo;
-  //public dayCome;
-  public gaGo;
-  public gaCome;
-
-  public dmTauId;
-  public loaiCho;
-  public toaSo;
-  public toaNo;
-  public slToiThieu;
-  public khongLayGiaVe;
-  public BookingCode;
 
   public ngaydi;
-  public ngayden;
-  public giodi;
-  public gioden;
-  public mactau;
+  //public dayCome;
+  public gadi;
+  public gaden;
+  public khongLayGiaVe: boolean;
   constructor(private http: HttpClient,
     private router: Router, private NavCtr: NavController,
     public _providerBooking: ProviderBooking,
     public _userProvider: UserProvider,
     //public _providerChooseSeat: ProviderChooseSeat,
     private _zone: NgZone) {
-    //console.log(_providerBooking)
     this._zone.run(()=>{
-      this.dayGo = this._providerBooking.dayGo;
-      this.gaCome = this._providerBooking.gaCome;
-      this.gaGo = this._providerBooking.gaGo;
-
-      this.http.get('./assets/datatimkiemtau.json').subscribe(
+      this.ngaydi = this._providerBooking.ngayDi;
+      this.gaden = this._providerBooking.gaDen;
+      this.gadi = this._providerBooking.gaDi;
+      
+      this.http.get('./assets/datajson/datatimkiemtau.json').subscribe(
         data => {
           this.RootObject = data as RootObject;
           this.ListTau = this.RootObject.ListTau as ListTau;
@@ -89,14 +73,11 @@ export class ChooseTripPage implements OnInit {
     this._providerBooking.chontau = item
     this._providerBooking.BookingCode = this.RootObject.BookingCode;
     this._providerBooking.itemChange.emit(1);
-   // console.log(this._providerBooking);
-    console.log(item);
     
   }
   clickbutton() {
     this.router.navigate(['chooseseat'])
     this._providerBooking.itemChange.emit(1);
-    //console.log(this._providerChooseSeat.loaiCho);
     
   }
 }

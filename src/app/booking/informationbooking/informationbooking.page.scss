@@ -38,6 +38,7 @@
 .title-sum{
     font-size: 16px;
     text-align: left;
+    font-weight: bold;
 }
 .title-price{
     font-size: 16px;
@@ -54,6 +55,18 @@
     font-size: 16px;
     color: #000;
     text-align: right;
+}
+.title-left-bold{
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    text-align: left;
+}
+.title-right-bold{
+    font-size: 16px;
+    color: #000;
+    text-align: right;
+    font-weight: bold;
 }
 .title-xn{
     font-size: 14px;

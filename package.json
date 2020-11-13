@@ -13,7 +13,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^10.1.5",
+    "@angular/animations": "^10.2.3",
     "@angular/cdk": "^10.2.4",
     "@angular/common": "~10.0.0",
     "@angular/core": "~10.0.0",
@@ -36,6 +36,7 @@
     "ionic-stepper": "^1.1.0",
     "ionic2-calendar": "^0.6.6",
     "moment": "^2.29.1",
+    "ngx-toastr": "^13.1.0",
     "primeng": "^10.0.3",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

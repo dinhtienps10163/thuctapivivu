@@ -1,25 +1,25 @@
 import { Injectable } from "@angular/core";
 import { AngularFireList, AngularFireDatabase } from "@angular/fire/database";
-import ModelBooking from './modelBooking';
+import { booking, RootObject } from './modelBooking';
 
 
 @Injectable({
     providedIn: 'root'
 })
 export class BookingService{
-    private dbBooking ='/ModelBooking';
+    private dbBooking ='/ThongTinHangKhach';
     
-  BookingRef: AngularFireList<ModelBooking> = null;
+  BookingRef: AngularFireList<RootObject> = null;
 
-  constructor(private db: AngularFireDatabase)
+  constructor(db: AngularFireDatabase)
   {
     this.BookingRef = db.list(this.dbBooking);
   }
-  getAll(): AngularFireList<ModelBooking> {
+  getAll(): AngularFireList<RootObject> {
     return this.BookingRef;
   }
 
-  create(modelBooking: ModelBooking): any {
-    return this.BookingRef.push(modelBooking);
+  create(RootObject: RootObject): any {
+    return this.BookingRef.push(RootObject);
   }
 }

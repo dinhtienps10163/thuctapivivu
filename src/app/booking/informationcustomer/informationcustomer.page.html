@@ -15,44 +15,65 @@
   <ion-item class="item-border-block" >
     <ion-label style="font-size: 18px; font-weight: bold;"> Thông tin khách hàng</ion-label>
   </ion-item>
-  <div *ngFor="let item of doiTuong">
-  <ion-item (click)="onClickNguoiLon(item)" class="item-border">
-    <ion-title style="font-size: 15px; font-weight: bold;">{{item}}</ion-title>
+  <div>
+  <ion-item (click)="onClicknguoithunhat()" class="item-border">
+    <ion-title style="font-size: 15px; font-weight: bold;">{{nguoithunhat.tenPTOnline}}</ion-title>
     <small>Nhập thông tin</small>
   </ion-item>
-  <div [hidden]="isHidden">
+  <div [hidden]="isHiddena">
   <ion-item class="item-border-block">
-    <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"[(ngModel)]="ten"></ion-input>
+    <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"[(ngModel)]="name"></ion-input>
   </ion-item>
   <ion-item class="item-border-block">
-    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *" [(ngModel)]="socmnd"></ion-input>
+    <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *" [(ngModel)]="CMND"></ion-input>
   </ion-item>
 </div>
-</div>
-<!-- <ion-item (click)="onClickSinhVien()" *ngIf="isShow" class="item-border">
-  <ion-title style="font-size: 15px; font-weight: bold;">{{sinhvien}}</ion-title>
+
+<ion-item (click)="onClicknguoithuhai()"class="item-border">
+  <ion-title style="font-size: 15px; font-weight: bold;">{{nguoithuhai.tenPTOnline}}</ion-title>
   <small>Nhập thông tin</small>
 </ion-item>
 <div [hidden]="isHiddenb" >
 <ion-item class="item-border-block">
-  <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
+  <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"[(ngModel)]="hTen"></ion-input>
 </ion-item>
 <ion-item class="item-border-block">
-  <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
+  <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"[(ngModel)]="hCMND"></ion-input>
 </ion-item>
 </div>
-<ion-item (click)="onClickLonTuoi()"*ngIf="isShowb" class="item-border">
-  <ion-title style="font-size: 15px; font-weight: bold;">{{nguoilontuoi}} (từ 60 tuổi)</ion-title>
+
+<div *ngIf="nguoithuba"> 
+<ion-item (click)="onClicknguoithuba()" class="item-border">
+  <ion-title style="font-size: 15px; font-weight: bold;">{{nguoithuba.tenPTOnline}}</ion-title>
   <small>Nhập thông tin</small>
 </ion-item>
 <div [hidden]="isHiddenc" >
 <ion-item class="item-border-block">
-  <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"></ion-input>
+  <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"[(ngModel)]="bTen"></ion-input>
 </ion-item>
 <ion-item class="item-border-block">
-  <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"></ion-input>
+  <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"[(ngModel)]="bCMND"></ion-input>
 </ion-item>
-</div> -->
+</div>
+</div>
+
+<div *ngIf="nguoithutu">
+<ion-item (click)="onClicknguoithutu()" class="item-border">
+  <ion-title style="font-size: 15px; font-weight: bold;">{{nguoithutu.tenPTOnline}}</ion-title>
+  <small>Nhập thông tin</small>
+</ion-item>
+<div [hidden]="isHiddend" >
+<ion-item class="item-border-block">
+  <ion-input placeholder="Nhập họ tên (VD: NGUYEN VAN A) *"[(ngModel)]="tTen"></ion-input>
+</ion-item>
+<ion-item class="item-border-block">
+  <ion-input placeholder="Nhập CMND/ Hộ chiếu/ GPLX *"[(ngModel)]="tCMND"></ion-input>
+</ion-item>
+</div>
+</div>
+</div>
+
+
 </div>
   <div *ngIf="isShow">
   <ion-item class="item-border">
